@@ -1,4 +1,4 @@
-package com.bw.movie;
+package com.bw.movie.activity;
 
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
@@ -9,6 +9,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.bw.movie.R;
 
 import java.util.Random;
 import java.util.Timer;

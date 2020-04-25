@@ -6,6 +6,7 @@ import com.bw.movie.bean.home_comingsoonmovie.ComingSoonShow;
 import com.bw.movie.bean.home_hotmovie.HotShow;
 import com.bw.movie.bean.home_release.ReleaseShow;
 import com.bw.movie.bean.login_bean.LoginShow;
+import com.bw.movie.bean.movie_detail.MovieDetailShow;
 import com.bw.movie.bean.register.RegisterShow;
 
 import io.reactivex.Observable;
@@ -32,8 +33,6 @@ public interface IRequest {
      //    热门电影
     @GET(Api.HOTMOVIE_URL)
     Observable<HotShow> hot(@Query("page") int page, @Query("count") int count);
-
-
 //    登陆
     @POST(Api.LOGIN_URL)
     @FormUrlEncoded
@@ -46,5 +45,9 @@ public interface IRequest {
     @POST(Api.SENDOUTEMAILCODE_URL)
     @FormUrlEncoded
     Observable<CodeSendShow> sendCode(@Field("email")String email);
+//    详情
+    @GET(Api.MOVIESDETAIL_URL)
+    Observable<MovieDetailShow> MoviesDetail(@Query("movieId") int movieId);
+
 
 }

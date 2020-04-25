@@ -22,7 +22,7 @@
         android:id="@+id/tv_introduction"
         android:background="@drawable/shape_s"
         android:padding="@dimen/dp_10"
-        android:textColor="#0A0101"
+        android:textColor="@color/colorBluck"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 

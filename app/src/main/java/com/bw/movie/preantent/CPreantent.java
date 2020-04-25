@@ -124,4 +124,20 @@ public class CPreantent extends BasePreantent implements IContract.IPreantent {
             }
         },args);
     }
+//电影详情
+    @Override
+    public void onMovieDetailData(Object... args) {
+        mCModule.onMovieDetailData(new IContract.IModule() {
+            @Override
+            public void onSuccess(Object o) {
+                getView().onSuccess(o);
+            }
+
+            @Override
+            public void onFail(String mes) {
+                getView().onFail(mes);
+            }
+        },args);
+
+    }
 }

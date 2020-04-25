@@ -11,8 +11,13 @@ public interface Api {
     String COMINGSOON_URL = "movie/v2/findComingSoonMovieList";
     //热门电影
     String HOTMOVIE_URL = "movie/v2/findHotMovieList";
-    String MOVIESDETAIL_URL ="movie/v2/findMoviesDetail";
+//    登陆
     String LOGIN_URL ="user/v2/login";
+//    注册
     String REGISTER_URL ="user/v2/register";
+//    验证码
     String SENDOUTEMAILCODE_URL ="user/v2/sendOutEmailCode";
+    //    详情
+    String MOVIESDETAIL_URL ="movie/v2/findMoviesDetail";
+
 }

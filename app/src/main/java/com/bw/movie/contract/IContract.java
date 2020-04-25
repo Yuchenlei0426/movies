@@ -24,5 +24,8 @@ public interface IContract {
         void onRegisterData(Object...args);
 //        发送验证码
         void onCodeSendData(Object...args);
+//        详情
+        void onMovieDetailData(Object...args);
+
     }
 }

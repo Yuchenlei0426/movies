@@ -22,9 +22,6 @@ import com.stx.xhb.xbanner.XBanner;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-
 /**
  * @describe(描述)：首页多条目
  * @data（日期）: 2020/4/19
@@ -233,7 +230,7 @@ public class HomeAdper extends RecyclerView.Adapter {
             ivHotre = (ImageView) itemView.findViewById(R.id.iv_hotre);
             reMove3 = (TextView) itemView.findViewById(R.id.re_move_hot);
             ivPic = (SimpleDraweeView) itemView.findViewById(R.id.iv_pic);
-            rvRelease = (RecyclerView) itemView.findViewById(R.id.rv_release);
+            rvRelease = (RecyclerView) itemView.findViewById(R.id.rv_hot);
 
         }
     }

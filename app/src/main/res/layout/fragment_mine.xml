@@ -25,7 +25,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
-                    android:text="我的"
+                    android:text="@string/mine"
                     android:textColor="#ffffff"
                     android:textSize="@dimen/sp_20" />
 
@@ -57,7 +57,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/sp_20"
-                    android:text="去登录"
+                    android:text="@string/gotoLogin"
                     android:layout_gravity="center"
                     android:id="@+id/tv_nickName"
                     />
@@ -150,7 +150,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:text="我的关注"
+                    android:text="@string/my_interest"
                     android:textColor="#fff" />
 
             </LinearLayout>
@@ -196,7 +196,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:text="购票记录"
+                    android:text="@string/buy_ticket"
                     android:textColor="#fff" />
 
             </LinearLayout>
@@ -227,7 +227,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:text="看过的电影"
+                    android:text="@string/read_movie"
                     android:textColor="#fff" />
 
             </LinearLayout>
@@ -250,7 +250,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:text="我的评论"
+                    android:text="@string/my_comment"
                     android:textColor="#fff" />
 
             </LinearLayout>
@@ -273,7 +273,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:text="意见反馈"
+                    android:text="@string/feedback"
                     android:textColor="#fff" />
 
             </LinearLayout>
@@ -304,7 +304,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:text="设置"
+                    android:text="@string/setting"
                     android:textColor="#fff" />
 
             </LinearLayout>

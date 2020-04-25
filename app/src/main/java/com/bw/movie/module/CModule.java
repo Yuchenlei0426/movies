@@ -10,6 +10,7 @@ import com.bw.movie.bean.home_release.ReleaseShow;
 import com.bw.movie.bean.login_bean.LoginResult;
 import com.bw.movie.bean.login_bean.LoginShow;
 import com.bw.movie.bean.login_bean.UserInfo;
+import com.bw.movie.bean.movie_detail.MovieDetailShow;
 import com.bw.movie.bean.register.RegisterShow;
 import com.bw.movie.contract.IContract;
 import com.bw.movie.utils.App;
@@ -22,10 +23,10 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 
 /**
- *@describe(描述)：这是Moudle层
- *@data（日期）: 2020/4/24
- *@time（时间）: 14:33
- *@author（作者）: 于晨雷
+ * @describe(描述)：这是Moudle层
+ * @data（日期）: 2020/4/24
+ * @time（时间）: 14:33
+ * @author（作者）: 于晨雷
  **/
 public class CModule {
 
@@ -158,10 +159,10 @@ public class CModule {
                 });
     }
 
-//登陆
-    public void onLoginData(IContract.IModule iModule,Object...args){
+    //登陆
+    public void onLoginData(IContract.IModule iModule, Object... args) {
         IRequest iRequest = WorkUtil.getIncract().create(IRequest.class);
-        iRequest.login((String)args[0],(String)args[1])
+        iRequest.login((String) args[0], (String) args[1])
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<LoginShow>() {
@@ -183,10 +184,10 @@ public class CModule {
                             UserInfo userInfo = result.getUserInfo();
                             String nickName = userInfo.getNickName();
                             String headPic = userInfo.getHeadPic();
-                            edit.putString("sessionId",sessionId);
-                            edit.putInt("userId",userId);
-                            edit.putString("headPic",headPic);
-                            edit.putString("nickName",nickName);
+                            edit.putString("sessionId", sessionId);
+                            edit.putInt("userId", userId);
+                            edit.putString("headPic", headPic);
+                            edit.putString("nickName", nickName);
                             edit.commit();
                         }
                     }
@@ -203,10 +204,10 @@ public class CModule {
                 });
     }
 
-//    注册
-    public void onRegisterData(IContract.IModule iModule,Object...args){
+    //    注册
+    public void onRegisterData(IContract.IModule iModule, Object... args) {
         IRequest iRequest = WorkUtil.getIncract().create(IRequest.class);
-        iRequest.register((String)args[0],(String)args[1],(String)args[2],(String)args[3])
+        iRequest.register((String) args[0], (String) args[1], (String) args[2], (String) args[3])
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<RegisterShow>() {
@@ -234,10 +235,11 @@ public class CModule {
                     }
                 });
     }
-//     获取验证码
- public void onCodeSendData(IContract.IModule iModule,Object...args){
+
+    //     获取验证码
+    public void onCodeSendData(IContract.IModule iModule, Object... args) {
         IRequest iRequest = WorkUtil.getIncract().create(IRequest.class);
-        iRequest.sendCode((String)args[0])
+        iRequest.sendCode((String) args[0])
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<CodeSendShow>() {
@@ -251,6 +253,39 @@ public class CModule {
                         String status = codeSendShow.getStatus();
                         if (status.equals("0000")) {
                             iModule.onSuccess(codeSendShow);
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        iModule.onFail(e.getMessage());
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+    }
+
+
+//    详情
+    public void onMovieDetailData(IContract.IModule iModule, Object... args) {
+        IRequest iRequest = WorkUtil.getIncract().create(IRequest.class);
+        iRequest.MoviesDetail((int) args[0])
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<MovieDetailShow>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(MovieDetailShow movieDetailShow) {
+                        String status = movieDetailShow.getStatus();
+                        if (status.equals("0000")) {
+                            iModule.onSuccess(movieDetailShow);
                         }
                     }
 

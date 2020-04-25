@@ -48,7 +48,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="@dimen/dp_20"
-                    android:text="电影"
+                    android:text="@string/movie"
                     android:textColor="@color/colorPink"
                     android:textSize="@dimen/sp_14" />
             </LinearLayout>
@@ -93,7 +93,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="@dimen/dp_20"
-                    android:text="影院"
+                    android:text="@string/cinema"
                     android:textColor="#e8185e"
                     android:textSize="@dimen/sp_14" />
             </LinearLayout>
@@ -140,7 +140,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="@dimen/dp_20"
-                    android:text="我的"
+                    android:text="@string/mine"
                     android:textColor="#e8185e"
                     android:textSize="@dimen/sp_14"
 

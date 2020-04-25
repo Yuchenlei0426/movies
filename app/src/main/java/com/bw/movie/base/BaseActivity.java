@@ -1,9 +1,15 @@
 package com.bw.movie.base;
 
+import android.app.Dialog;
 import android.os.Bundle;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.bumptech.glide.Glide;
 import com.bw.movie.R;
 import com.jaeger.library.StatusBarUtil;
 
@@ -14,6 +20,7 @@ import com.jaeger.library.StatusBarUtil;
  *@author（作者）: 于晨雷
  **/
 public  abstract class BaseActivity extends AppCompatActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +33,9 @@ public  abstract class BaseActivity extends AppCompatActivity {
         onView();
         onData();
     }
+
+
+
 
     protected abstract int onLayout();
 

@@ -52,7 +52,7 @@
             android:layout_width="@dimen/dp_45"
             android:layout_height="@dimen/dp_20"
             android:background="@drawable/se"
-            android:text="购买" />
+            android:text="@string/buy" />
     </LinearLayout>
 
 </LinearLayout>

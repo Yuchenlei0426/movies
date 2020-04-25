@@ -27,7 +27,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_toRightOf="@id/iv_xin"
-                android:text="正在热映"
+                android:text="@string/release"
                 android:textColor="@color/colorWhite"
                 android:textSize="@dimen/sp_15"
                 />
@@ -37,7 +37,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
-                android:text="更多"
+                android:text="@string/move"
                 android:id="@+id/re_move_release"
                 android:textColor="@color/colorWhite"
                 android:textSize="@dimen/sp_15" />

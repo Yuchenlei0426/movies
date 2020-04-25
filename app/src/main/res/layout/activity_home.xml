@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.HomeActivity">
+    <FrameLayout
+        android:id="@+id/frame"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_weight="9" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/colorBlue"
+        android:orientation="horizontal"
+        >
+        <RelativeLayout
+            android:id="@+id/relay_view1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal">
+
+            <LinearLayout
+                android:id="@+id/lin_movie"
+                android:layout_width="@dimen/dp_108"
+                android:layout_height="@dimen/dp_40"
+                android:layout_marginTop="@dimen/dp_12"
+                android:layout_marginBottom="@dimen/dp_12"
+                android:background="@drawable/home_btn"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/dp_20"
+                    android:layout_height="@dimen/dp_20"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/movie_true" />
+
+                <TextView
+                    android:id="@+id/tv_moview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:text="电影"
+                    android:textColor="@color/colorPink"
+                    android:textSize="@dimen/sp_14" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/movie_ima"
+                android:layout_width="@dimen/dp_20"
+                android:layout_height="@dimen/dp_20"
+                android:layout_centerVertical="true"
+                android:src="@drawable/home_selector"
+                android:visibility="invisible" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relay_view2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal">
+
+            <LinearLayout
+                android:id="@+id/lin_cinema"
+                android:layout_width="@dimen/dp_108"
+                android:layout_height="@dimen/dp_36"
+                android:layout_marginTop="@dimen/dp_12"
+                android:layout_marginBottom="@dimen/dp_12"
+                android:background="@drawable/home_btn"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:visibility="invisible">
+
+                <ImageView
+                    android:layout_width="@dimen/dp_20"
+                    android:layout_height="@dimen/dp_20"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/cinema_true"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_cinema"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:text="影院"
+                    android:textColor="#e8185e"
+                    android:textSize="@dimen/sp_14" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/cinema_ima"
+                android:layout_width="@dimen/dp_20"
+                android:layout_height="@dimen/dp_20"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/cinema_false" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relay_view3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal">
+
+            <LinearLayout
+                android:id="@+id/lin_mine"
+                android:layout_width="@dimen/dp_108"
+                android:layout_height="@dimen/dp_36"
+                android:layout_marginTop="@dimen/dp_12"
+                android:layout_marginBottom="@dimen/dp_12"
+                android:background="@drawable/home_btn"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:visibility="invisible">
+
+                <ImageView
+                    android:layout_width="@dimen/dp_20"
+                    android:layout_height="@dimen/dp_20"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/mine_selector"
+                    android:src="@drawable/mine_true"
+
+                    />
+
+                <TextView
+                    android:id="@+id/tv_mine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:text="我的"
+                    android:textColor="#e8185e"
+                    android:textSize="@dimen/sp_14"
+
+                    />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/mine_ima"
+                android:layout_width="@dimen/dp_20"
+                android:layout_height="@dimen/dp_20"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/mine_false" />
+        </RelativeLayout>
+
+
+    </RadioGroup>
+</LinearLayout>

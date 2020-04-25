@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".activity.LoginActivity">
+<LinearLayout
+    android:layout_weight="1"
+    android:background="@drawable/background_login"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"></LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/colorBlue"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/et_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_10"
+            android:background="@drawable/login_shleps"
+            android:hint="请输入邮箱账号"
+            android:padding="@dimen/dp_10"
+            android:textColor="@color/colorWhite"
+            android:textColorHint="@color/colorWhite" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/et_pwd"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp_10"
+                android:layout_weight="3"
+                android:background="@drawable/login_shleps"
+                android:hint="请输入密码"
+                android:inputType="textPassword"
+                android:padding="@dimen/dp_10"
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/colorWhite" />
+
+            <Button
+                android:layout_marginRight="@dimen/dp_20"
+                android:text="忘记密码"
+                android:layout_weight="1"
+                android:background="@drawable/code_send"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_register"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="暂无账号,立刻注册"
+                android:textColor="@color/colorGray"
+                android:textSize="@dimen/sp_10" />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/but_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_20"
+            android:background="@drawable/shapeslogin"
+            android:text="登录"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/sp_20" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="------或------"
+            android:textColor="#ffffff" />
+
+        <ImageView
+            android:id="@+id/iv_we_chat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_20"
+            android:background="@drawable/shapesweixinlogin"
+            android:padding="@dimen/dp_10"
+            android:src="@drawable/weixin_copy_3" />
+    </LinearLayout>
+</LinearLayout>

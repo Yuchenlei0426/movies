@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorBlue"
+    tools:context=".activity.RegisterActivity">
+<LinearLayout
+    android:layout_weight="1"
+    android:background="@drawable/background_login"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_0">
+</LinearLayout>
+    <LinearLayout
+        android:layout_weight="2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_0">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_margin="@dimen/dp_24"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <EditText
+                android:id="@+id/et_nickName"
+                android:hint="请输入昵称"
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/colorWhite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/login_shleps"
+                android:layout_marginTop="@dimen/dp_20"
+                android:padding="@dimen/dp_10"
+                />
+            <EditText
+                android:id="@+id/et_re_email"
+                android:hint="请输入邮箱账号"
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/colorWhite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/login_shleps"
+                android:layout_marginTop="@dimen/dp_20"
+                android:padding="@dimen/dp_10"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/et_re_pwd"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp_10"
+                    android:layout_weight="5"
+                    android:background="@drawable/login_shleps"
+                    android:hint="请设置密码"
+                    android:inputType="textPassword"
+                    android:padding="@dimen/dp_10"
+                    android:textColor="@color/colorWhite"
+                    android:textColorHint="@color/colorWhite" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/et_code"
+                    android:layout_weight="5"
+                    android:hint="请输入验证码"
+                    android:textColor="@color/colorWhite"
+                    android:textColorHint="@color/colorWhite"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/login_shleps"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:padding="@dimen/dp_10"
+                    />
+                <Button
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:text="获取验证码"
+                    android:id="@+id/but_code"
+                    android:background="@drawable/code_send"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_height="wrap_content"
+                android:background="@drawable/sel"
+                android:id="@+id/but_xin_register"
+                android:text="注册"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/sp_20"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

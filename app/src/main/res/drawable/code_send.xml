@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape android:shape="rectangle"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 填充的颜色 -->
+    <solid android:color="@color/colorWhite" />
+    <size
+        android:width="@dimen/dp_20"
+        android:height="@dimen/dp_5" />
+    <!-- 边框的颜色和粗细 -->
+    <stroke
+        android:color="@color/colorWhite"
+        />
+
+    <!-- android:radius 圆角的半径 -->
+    <corners
+        android:topRightRadius="@dimen/dp_5"
+        android:bottomRightRadius="@dimen/dp_5"
+        />
+</shape>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal"
+    android:orientation="vertical"
+    android:background="@color/colorBlue"
+    tools:context=".fragment.HomeFragment">
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_margin="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:src="@drawable/positioning_hdpi"
+                android:layout_width="@dimen/dp_20"
+                android:layout_height="@dimen/dp_24"
+                android:id="@+id/iv_Positioning"
+                />
+            <TextView
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/colorWhite"
+                android:id="@+id/tv_city"
+                android:layout_width="wrap_content"
+                android:text="北京"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+<com.jcodecraeer.xrecyclerview.XRecyclerView
+    android:layout_weight="9"
+    android:id="@+id/rv_home"
+    android:layout_width="match_parent"
+    android:layout_height="0dp">
+</com.jcodecraeer.xrecyclerview.XRecyclerView>
+</LinearLayout>

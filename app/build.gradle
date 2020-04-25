@@ -69,5 +69,9 @@ dependencies {
 
     implementation 'com.github.bumptech.glide:glide:4.9.0'
     implementation 'com.amap.api:location:latest.integration'
+    implementation files('libs\\nineoldandroids.jar')
+//沉浸式状态栏
+    implementation 'com.jaeger.statusbarutil:library:1.5.1'
+
 
 }

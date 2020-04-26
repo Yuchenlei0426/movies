@@ -115,6 +115,8 @@ public class HomeFragment extends BaseNetFragment {
 
     @Override
     protected void onData() {
+
+
         mCPreantent.onBannerData();
         mCPreantent.onDreleaseData(1, 5);
         mCPreantent.onComingsoonData(1, 5);

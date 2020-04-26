@@ -41,5 +41,9 @@
     <string name="Foreshow">预告</string>
     <string name="Still">剧照</string>
     <string name="Comment">评论</string>
+    <string name="Director">演职演员</string>
+    <string name="movieIntroduce">剧情简介</string>
+    <string name="movieDirector">导演</string>
+    <string name="intro_movieActor">演员</string>
 
 </resources>

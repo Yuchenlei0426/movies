@@ -2,6 +2,7 @@ package com.bw.movie.utils;
 
 import com.bw.movie.bean.banner.HomeBannerShow;
 import com.bw.movie.bean.code_send.CodeSendShow;
+import com.bw.movie.bean.comment_details.CommentShow;
 import com.bw.movie.bean.home_comingsoonmovie.ComingSoonShow;
 import com.bw.movie.bean.home_hotmovie.HotShow;
 import com.bw.movie.bean.home_release.ReleaseShow;
@@ -30,24 +31,35 @@ public interface IRequest {
     @GET(Api.COMINGSOON_URL)
     Observable<ComingSoonShow> comingsoon(@Query("page") int page, @Query("count") int count);
 
-     //    热门电影
+    //    热门电影
     @GET(Api.HOTMOVIE_URL)
     Observable<HotShow> hot(@Query("page") int page, @Query("count") int count);
-//    登陆
+
+    //    登陆
     @POST(Api.LOGIN_URL)
     @FormUrlEncoded
     Observable<LoginShow> login(@Field("email") String email, @Field("pwd") String pwd);
-//    注册
+
+    //    注册
     @POST(Api.REGISTER_URL)
     @FormUrlEncoded
-    Observable<RegisterShow> register(@Field("nickName")String nickName, @Field("pwd") String pwd, @Field("email")String email,@Field("code")String code);
-//    发送验证码
+    Observable<RegisterShow> register(@Field("nickName") String nickName, @Field("pwd") String pwd, @Field("email") String email, @Field("code") String code);
+
+    //    发送验证码
     @POST(Api.SENDOUTEMAILCODE_URL)
     @FormUrlEncoded
-    Observable<CodeSendShow> sendCode(@Field("email")String email);
-//    详情
+    Observable<CodeSendShow> sendCode(@Field("email") String email);
+
+    //    详情
     @GET(Api.MOVIESDETAIL_URL)
     Observable<MovieDetailShow> MoviesDetail(@Query("movieId") int movieId);
+
+    @GET(Api.COMMENT_URL)
+    Observable<CommentShow> comment(@Header("userId") int userId
+            , @Header("sessionId") String sessionId
+            , @Query("movieId") int movieId
+            , @Query("page") int page
+            , @Query("") int count);
 
 
 }

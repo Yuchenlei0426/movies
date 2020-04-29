@@ -26,6 +26,8 @@ public interface IContract {
         void onCodeSendData(Object...args);
 //        详情
         void onMovieDetailData(Object...args);
+//        电影评论
+        void onCommentData(Object...args);
 
     }
 }

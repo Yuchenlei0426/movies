@@ -4,6 +4,7 @@ import android.content.SharedPreferences;
 
 import com.bw.movie.bean.banner.HomeBannerShow;
 import com.bw.movie.bean.code_send.CodeSendShow;
+import com.bw.movie.bean.comment_details.CommentShow;
 import com.bw.movie.bean.home_comingsoonmovie.ComingSoonShow;
 import com.bw.movie.bean.home_hotmovie.HotShow;
 import com.bw.movie.bean.home_release.ReleaseShow;
@@ -47,6 +48,7 @@ public class CModule {
                         String status = homeBannerShow.getStatus();
                         if (status.equals("0000")) {
                             iModule.onSuccess(homeBannerShow);
+
                         }
                     }
 
@@ -269,7 +271,7 @@ public class CModule {
     }
 
 
-//    详情
+    //    详情
     public void onMovieDetailData(IContract.IModule iModule, Object... args) {
         IRequest iRequest = WorkUtil.getIncract().create(IRequest.class);
         iRequest.MoviesDetail((int) args[0])
@@ -301,4 +303,35 @@ public class CModule {
                 });
     }
 
+//电影评论
+    public void onCommentData(IContract.IModule iModule, Object... args) {
+        IRequest iRequest = WorkUtil.getIncract().create(IRequest.class);
+        iRequest.comment((int) args[0], (String) args[1], (int) args[2], (int) args[3], (int) args[4])
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<CommentShow>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(CommentShow commentShow) {
+                        String status = commentShow.getStatus();
+                        if (status.equals("0000")) {
+                            iModule.onSuccess(commentShow);
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        iModule.onFail(e.getMessage());
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+    }
 }

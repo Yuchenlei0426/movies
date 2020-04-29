@@ -115,7 +115,7 @@ public class MovieDetailsActivity extends BaseNetActivity {
         mTabDetails.getTabAt(0).setText(getResources().getText(R.string.Introduce));
         mTabDetails.getTabAt(1).setText(getResources().getText(R.string.Foreshow));
         mTabDetails.getTabAt(2).setText(getResources().getText(R.string.Still));
-        mTabDetails.getTabAt(3).setText(getResources().getText(R.string.cinema));
+        mTabDetails.getTabAt(3).setText(getResources().getText(R.string.Comment));
     }
 
     @Subscribe(sticky = true)

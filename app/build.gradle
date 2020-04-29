@@ -5,7 +5,7 @@ android {
     buildToolsVersion "29.0.2"
     defaultConfig {
         applicationId "com.bw.movie"
-        minSdkVersion 15
+        minSdkVersion 17
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -31,6 +31,8 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+
     implementation 'com.jakewharton:butterknife:10.2.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.0'
     implementation 'org.greenrobot:eventbus:3.1.1'
@@ -72,6 +74,7 @@ dependencies {
     implementation files('libs\\nineoldandroids.jar')
 //沉浸式状态栏
     implementation 'com.jaeger.statusbarutil:library:1.5.1'
-
+    implementation 'cn.jzvd:jiaozivideoplayer:7.3.0'
+    implementation 'me.relex:photodraweeview:1.1.2'
 
 }

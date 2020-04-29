@@ -19,5 +19,8 @@ public interface Api {
     String SENDOUTEMAILCODE_URL ="user/v2/sendOutEmailCode";
     //    详情
     String MOVIESDETAIL_URL ="movie/v2/findMoviesDetail";
+//    电影评论
+    String COMMENT_URL ="movie/v2/findAllMovieComment";
+
 
 }

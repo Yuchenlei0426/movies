@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/colorBlue"
+    android:background="@color/colorDark"
     tools:context=".fragment.MineFragment">
     <LinearLayout
         android:background="@drawable/invalid_name"
@@ -85,11 +85,12 @@
 
         <RelativeLayout
             android:id="@+id/rl_dian"
+
             android:layout_width="@dimen/dp_312"
             android:layout_height="@dimen/dp_40"
             android:layout_gravity="center"
             android:layout_marginLeft="@dimen/dp_24"
-            android:background="#141931">
+            android:background="@color/colorBlue">
 
             <TextView
                 android:layout_width="@dimen/dp_42"
@@ -127,6 +128,7 @@
         android:orientation="vertical">
 
         <LinearLayout
+            android:background="@color/colorBlue"
             android:layout_marginTop="@dimen/dp_5"
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -205,6 +207,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:background="@color/colorBlue"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1">
@@ -282,6 +285,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:background="@color/colorBlue"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1">

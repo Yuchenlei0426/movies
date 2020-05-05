@@ -1,14 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     android:layout_height="match_parent"
+    android:background="@color/colorBlue"
     tools:context=".fragment.CinemaFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+<com.google.android.material.tabs.TabLayout
+    android:id="@+id/tab_cinema"
+    android:layout_weight="1"
+    app:tabTextColor="@color/colorWhite"
+    app:tabSelectedTextColor="@color/colorRed"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"></com.google.android.material.tabs.TabLayout>
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/vp_cinema"
+        android:layout_weight="7"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
-
-</FrameLayout>
+        android:layout_height="0dp">
+    </androidx.viewpager.widget.ViewPager>
+</LinearLayout>

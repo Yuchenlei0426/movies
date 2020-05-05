@@ -21,6 +21,15 @@ public interface Api {
     String MOVIESDETAIL_URL ="movie/v2/findMoviesDetail";
 //    电影评论
     String COMMENT_URL ="movie/v2/findAllMovieComment";
+//    推荐影院
+    String RECOMMEND_URL ="cinema/v1/findRecommendCinemas";
+//    附近影院
+    String NEARBY_URL ="cinema/v1/findNearbyCinemas";
+//    查询区域
+    String REGION_URL ="tool/v2/findRegionList";
+//    根据区域查询影院
+    String CINEMABYREGION_URL ="cinema/v2/findCinemaByRegion";
+
 
 
 }

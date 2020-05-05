@@ -1,6 +1,10 @@
 package com.bw.movie.utils;
 
 import com.bw.movie.bean.banner.HomeBannerShow;
+import com.bw.movie.bean.cinema_bean.RecommendShow;
+import com.bw.movie.bean.cinema_bean.findCinemaByRegion.CinemaByRegion;
+import com.bw.movie.bean.cinema_bean.findregion.FindRegionShow;
+import com.bw.movie.bean.cinema_bean.nearbycinemas.NearbyCinemas;
 import com.bw.movie.bean.code_send.CodeSendShow;
 import com.bw.movie.bean.comment_details.CommentShow;
 import com.bw.movie.bean.home_comingsoonmovie.ComingSoonShow;
@@ -54,12 +58,36 @@ public interface IRequest {
     @GET(Api.MOVIESDETAIL_URL)
     Observable<MovieDetailShow> MoviesDetail(@Query("movieId") int movieId);
 
+    //    评论
     @GET(Api.COMMENT_URL)
     Observable<CommentShow> comment(@Header("userId") int userId
             , @Header("sessionId") String sessionId
             , @Query("movieId") int movieId
             , @Query("page") int page
-            , @Query("") int count);
+            , @Query("count") int count);
 
+    //    推荐
+    @GET(Api.RECOMMEND_URL)
+    Observable<RecommendShow> recommend(@Header("userId") int userId
+            , @Header("sessionId") String sessionId
+            , @Query("page") int page
+            , @Query("count") int count);
+
+    //附近
+    @GET(Api.NEARBY_URL)
+    Observable<NearbyCinemas> nearby(@Header("userId") int userId,
+                                     @Header("sessionId") String sessionId,
+                                     @Query("longitude") double longitude,
+                                     @Query("latitude") double latitude,
+                                     @Query("page") int page,
+                                     @Query("count") int count);
+
+    //查询区域
+    @GET(Api.REGION_URL)
+    Observable<FindRegionShow> region();
+
+    //    根据区域查询影院
+    @GET(Api.CINEMABYREGION_URL)
+    Observable<CinemaByRegion> cinemabyregion(@Query("regionId") int regionId);
 
 }

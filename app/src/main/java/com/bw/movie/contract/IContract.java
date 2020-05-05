@@ -29,5 +29,14 @@ public interface IContract {
 //        电影评论
         void onCommentData(Object...args);
 
+        //    推荐
+        void onRecommendData(Object...args);
+        //    附近
+        void onNearbyData(Object...args);
+        //    查询区域
+        void onRegionData(Object...args);
+        //    根据区域查询影院
+        void onCinemabyregionData(Object...args);
+
     }
 }

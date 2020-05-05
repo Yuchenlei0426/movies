@@ -1,17 +1,27 @@
 package com.bw.movie.bean.comment_details;
 
+import java.util.List;
+
 public class Commentresult {
     String commentContent;
     String commentHeadPic;
     int commentId;
-    int commentTime;
+    long commentTime;
     int commentUserId;
     String commentUserName;
     int greatNum;
     int isGreat;
-    int replyHeadPic;
+    List<String> replyHeadPic;
     int replyNum;
     double score;
+
+    public long getCommentTime() {
+        return commentTime;
+    }
+
+    public void setCommentTime(long commentTime) {
+        this.commentTime = commentTime;
+    }
 
     public String getCommentContent() {
         return commentContent;
@@ -37,13 +47,6 @@ public class Commentresult {
         this.commentId = commentId;
     }
 
-    public int getCommentTime() {
-        return commentTime;
-    }
-
-    public void setCommentTime(int commentTime) {
-        this.commentTime = commentTime;
-    }
 
     public int getCommentUserId() {
         return commentUserId;
@@ -77,11 +80,11 @@ public class Commentresult {
         this.isGreat = isGreat;
     }
 
-    public int getReplyHeadPic() {
+    public List<String> getReplyHeadPic() {
         return replyHeadPic;
     }
 
-    public void setReplyHeadPic(int replyHeadPic) {
+    public void setReplyHeadPic(List<String> replyHeadPic) {
         this.replyHeadPic = replyHeadPic;
     }
 

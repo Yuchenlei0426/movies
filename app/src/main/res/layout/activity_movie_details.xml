@@ -120,7 +120,7 @@
                 android:orientation="vertical">
                 <com.google.android.material.tabs.TabLayout
                     app:tabTextColor="@color/colorWhite"
-                    app:tabSelectedTextColor="@color/colorWhite"
+                    app:tabSelectedTextColor="@color/colorRed"
                     android:id="@+id/tab_details"
                     android:layout_weight="1"
                     android:layout_width="match_parent"

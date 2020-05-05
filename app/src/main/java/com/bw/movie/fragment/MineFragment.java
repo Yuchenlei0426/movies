@@ -21,8 +21,11 @@ import com.bw.movie.utils.App;
 import com.facebook.drawee.view.SimpleDraweeView;
 
 /**
- * A simple {@link Fragment} subclass.
- */
+ *@describe(描述)：我的
+ *@data（日期）: 2020/5/4
+ *@time（时间）: 18:33
+ *@author（作者）: 于晨雷
+ **/
 public class MineFragment extends BaseFragment implements View.OnClickListener {
 
 

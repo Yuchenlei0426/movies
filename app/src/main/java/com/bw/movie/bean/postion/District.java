@@ -1,17 +1,25 @@
 package com.bw.movie.bean.postion;
 
 public class District {
-    private String district;
 
-    public District(String district) {
-        this.district = district;
+    double latitude;
+    double longitude;
+
+    public double getLatitude() {
+        return latitude;
     }
 
-    public String getDistrict() {
-        return district;
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
     }
 
-    public void setDistrict(String district) {
-        this.district = district;
+    public double getLongitude() {
+        return longitude;
     }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
+    }
+
+
 }

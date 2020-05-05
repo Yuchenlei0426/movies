@@ -32,6 +32,7 @@ import com.bw.movie.base.BaseNetFragment;
 import com.bw.movie.base.BasePreantent;
 import com.bw.movie.bean.banner.BannerResult;
 import com.bw.movie.bean.banner.HomeBannerShow;
+import com.bw.movie.bean.evenbean.DistShow;
 import com.bw.movie.bean.home_comingsoonmovie.ComingSoonResult;
 import com.bw.movie.bean.home_comingsoonmovie.ComingSoonShow;
 import com.bw.movie.bean.home_hotmovie.HotResult;
@@ -50,8 +51,11 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * A simple {@link Fragment} subclass.
- */
+ *@describe(描述)：电影
+ *@data（日期）: 2020/5/4
+ *@time（时间）: 18:33
+ *@author（作者）: 于晨雷
+ **/
 public class HomeFragment extends BaseNetFragment {
 
     private int GPS_REQUEST_CODE = 10;
@@ -195,7 +199,16 @@ public class HomeFragment extends BaseNetFragment {
 
                             String city = amapLocation.getCity();
                             String district = amapLocation.getDistrict();
-                            EventBus.getDefault().postSticky(new District(district));
+                            double latitude = amapLocation.getLatitude();
+                            double longitude = amapLocation.getLongitude();
+                            DistShow distShow = new DistShow();
+                            distShow.setDistrict(district);
+
+
+                            District district1 = new District();
+                            district1.setLatitude(latitude);
+                            district1.setLongitude(longitude);
+                            EventBus.getDefault().postSticky(district1);
                             //获取当前定位结果来源，如网络定位结果，详见定位类型表
 //                            Log.e("定位类型", amapLocation.getLocationType() + "");
 //                            Log.e("获取精度信息", amapLocation.getAccuracy() + "");

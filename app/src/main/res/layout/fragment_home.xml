@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:layout_gravity="center_horizontal"
     android:orientation="vertical"
-    android:background="@color/colorBlue"
+    android:background="@color/colorDark"
     tools:context=".fragment.HomeFragment">
     <LinearLayout
         android:layout_weight="1"

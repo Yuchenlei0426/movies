@@ -3,6 +3,10 @@ package com.bw.movie.module;
 import android.content.SharedPreferences;
 
 import com.bw.movie.bean.banner.HomeBannerShow;
+import com.bw.movie.bean.cinema_bean.RecommendShow;
+import com.bw.movie.bean.cinema_bean.findCinemaByRegion.CinemaByRegion;
+import com.bw.movie.bean.cinema_bean.findregion.FindRegionShow;
+import com.bw.movie.bean.cinema_bean.nearbycinemas.NearbyCinemas;
 import com.bw.movie.bean.code_send.CodeSendShow;
 import com.bw.movie.bean.comment_details.CommentShow;
 import com.bw.movie.bean.home_comingsoonmovie.ComingSoonShow;
@@ -334,4 +338,130 @@ public class CModule {
                     }
                 });
     }
+
+//    推荐
+    public void onRecommendData(IContract.IModule iModule, Object... args) {
+        IRequest iRequest = WorkUtil.getIncract().create(IRequest.class);
+        iRequest.recommend((int)args[0],(String)args[1],(int)args[2],(int)args[3])
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<RecommendShow>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(RecommendShow recommendShow) {
+                        String status = recommendShow.getStatus();
+                        if (status.equals("0000")) {
+                            iModule.onSuccess(recommendShow);
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        iModule.onFail(e.getMessage());
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+    }
+//    附近
+    public void onNearbyData(IContract.IModule iModule, Object... args) {
+        IRequest iRequest = WorkUtil.getIncract().create(IRequest.class);
+        iRequest.nearby((int)args[0],(String)args[1],(double)args[2],(double)args[3],(int)args[4],(int)args[5])
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<NearbyCinemas>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(NearbyCinemas nearbyCinemas) {
+                        String status = nearbyCinemas.getStatus();
+                        if (status.equals("0000")) {
+                            iModule.onSuccess(nearbyCinemas);
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        iModule.onFail(e.getMessage());
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+    }
+//    查询区域
+    public void onRegionData(IContract.IModule iModule, Object... args) {
+        IRequest iRequest = WorkUtil.getIncract().create(IRequest.class);
+        iRequest.region()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<FindRegionShow>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(FindRegionShow findRegionShow) {
+                        String status = findRegionShow.getStatus();
+                        if (status.equals("0000")) {
+                            iModule.onSuccess(findRegionShow);
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        iModule.onFail(e.getMessage());
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+    }
+//    根据区域查询影院
+    public void onCinemabyregionData(IContract.IModule iModule, Object... args) {
+        IRequest iRequest = WorkUtil.getIncract().create(IRequest.class);
+        iRequest.cinemabyregion((int)args[0])
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<CinemaByRegion>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(CinemaByRegion cinemaByRegion) {
+                        String status = cinemaByRegion.getStatus();
+                        if (status.equals("0000")) {
+                            iModule.onSuccess(cinemaByRegion);
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        iModule.onFail(e.getMessage());
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+    }
+
 }

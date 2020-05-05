@@ -13,7 +13,11 @@ public class CPreantent extends BasePreantent implements IContract.IPreantent {
         mCModule = new CModule();
     }
 
-//    banner
+
+    /**
+     * banner
+     * @param args 动态参数
+     */
     @Override
     public void onBannerData(Object... args) {
         mCModule.onBannerData(new IContract.IModule() {
@@ -29,7 +33,11 @@ public class CPreantent extends BasePreantent implements IContract.IPreantent {
         },args);
     }
 
-//    正在热映
+
+    /**
+     * 正在热映
+     * @param args 动态参数
+     */
     @Override
     public void onDreleaseData(Object... args) {
         mCModule.onReleaseData(new IContract.IModule() {
@@ -45,7 +53,11 @@ public class CPreantent extends BasePreantent implements IContract.IPreantent {
         },args);
     }
 
-//    即将上映
+
+    /**
+     * 即将上映
+     * @param args 动态参数
+     */
     @Override
     public void onComingsoonData(Object... args) {
         mCModule.onComingsoonData(new IContract.IModule() {
@@ -61,7 +73,11 @@ public class CPreantent extends BasePreantent implements IContract.IPreantent {
         },args);
     }
 
-//    热门电影
+
+    /**
+     * 热门电影
+     * @param args 动态参数
+     */
     @Override
     public void onHotData(Object... args) {
         mCModule.onHotData(new IContract.IModule() {
@@ -77,7 +93,11 @@ public class CPreantent extends BasePreantent implements IContract.IPreantent {
         },args);
     }
 
-//    登陆
+
+    /**
+     * 登陆
+     * @param args 动态参数
+     */
     @Override
     public void onLoginData(Object... args) {
         mCModule.onLoginData(new IContract.IModule() {
@@ -93,7 +113,11 @@ public class CPreantent extends BasePreantent implements IContract.IPreantent {
         },args);
     }
 
-//    注册
+
+    /**
+     * 注册
+     * @param args 动态参数
+     */
     @Override
     public void onRegisterData(Object... args) {
         mCModule.onRegisterData(new IContract.IModule() {
@@ -109,7 +133,11 @@ public class CPreantent extends BasePreantent implements IContract.IPreantent {
         },args);
     }
 
-//    发送验证码
+
+    /**
+     * 发送验证码
+     * @param args 动态参数
+     */
     @Override
     public void onCodeSendData(Object... args) {
         mCModule.onCodeSendData(new IContract.IModule() {
@@ -124,7 +152,11 @@ public class CPreantent extends BasePreantent implements IContract.IPreantent {
             }
         },args);
     }
-//电影详情
+
+    /**
+     * 电影详情
+     * @param args 动态参数
+     */
     @Override
     public void onMovieDetailData(Object... args) {
         mCModule.onMovieDetailData(new IContract.IModule() {
@@ -144,6 +176,83 @@ public class CPreantent extends BasePreantent implements IContract.IPreantent {
     @Override
     public void onCommentData(Object... args) {
         mCModule.onCommentData(new IContract.IModule() {
+            @Override
+            public void onSuccess(Object o) {
+                getView().onSuccess(o);
+            }
+
+            @Override
+            public void onFail(String mes) {
+                getView().onFail(mes);
+            }
+        },args);
+    }
+
+    /**
+     * 推荐
+     * @param args 动态参数
+     */
+    @Override
+    public void onRecommendData(Object... args) {
+        mCModule. onRecommendData(new IContract.IModule() {
+            @Override
+            public void onSuccess(Object o) {
+                getView().onSuccess(o);
+            }
+
+            @Override
+            public void onFail(String mes) {
+                getView().onFail(mes);
+            }
+        },args);
+    }
+
+    /**
+     * 附近
+     * @param args 动态参数
+     */
+    @Override
+    public void onNearbyData(Object... args) {
+        mCModule.onNearbyData(new IContract.IModule() {
+            @Override
+            public void onSuccess(Object o) {
+                getView().onSuccess(o);
+            }
+
+            @Override
+            public void onFail(String mes) {
+                getView().onFail(mes);
+            }
+        },args);
+
+    }
+
+    /**
+     * 查询区域
+     * @param args 动态参数
+     */
+    @Override
+    public void onRegionData(Object... args) {
+        mCModule.onRegionData(new IContract.IModule() {
+            @Override
+            public void onSuccess(Object o) {
+                getView().onSuccess(o);
+            }
+
+            @Override
+            public void onFail(String mes) {
+                getView().onFail(mes);
+            }
+        },args);
+    }
+
+    /**
+     * 根据区域查询影院
+     * @param args 动态参数
+     */
+    @Override
+    public void onCinemabyregionData(Object... args) {
+        mCModule.onCinemabyregionData(new IContract.IModule() {
             @Override
             public void onSuccess(Object o) {
                 getView().onSuccess(o);

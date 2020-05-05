@@ -45,5 +45,6 @@
     <string name="movieIntroduce">剧情简介</string>
     <string name="movieDirector">导演</string>
     <string name="intro_movieActor">演员</string>
+    <string name="intro_graded">分数</string>
 
 </resources>

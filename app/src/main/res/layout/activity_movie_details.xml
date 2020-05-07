@@ -9,82 +9,96 @@
     tools:context=".activity.MovieDetailsActivity">
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
         <com.facebook.drawee.view.SimpleDraweeView
             android:id="@+id/sdv_imageUrl"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_600" />
 
         <LinearLayout
-            android:orientation="vertical"
-            android:layout_margin="@dimen/dp_20"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dp_20"
+            android:orientation="vertical">
+
             <TextView
-                android:textColor="@color/colorWhite"
-                android:text="@string/name"
                 android:id="@+id/tv_name"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:text="@string/name"
+                android:textColor="@color/colorWhite" />
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
+
                 <TextView
-                    android:textColor="@color/colorWhite"
-                    android:text="@string/type"
                     android:id="@+id/tv_movieType"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:text="@string/type"
+                    android:textColor="@color/colorWhite" />
+
                 <TextView
-                    android:textColor="@color/colorWhite"
-                    android:text="@string/duration"
                     android:id="@+id/tv_duration"
-                    android:layout_marginLeft="@dimen/dp_10"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:text="@string/duration"
+                    android:textColor="@color/colorWhite" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
+
                 <TextView
-                    android:textColor="@color/colorWhite"
-                    android:text="@string/releaseTime"
                     android:id="@+id/tv_releaseTime"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:text="@string/releaseTime"
+                    android:textColor="@color/colorWhite" />
+
                 <TextView
-                    android:layout_marginLeft="@dimen/dp_10"
-                    android:textColor="@color/colorWhite"
-                    android:text="@string/placeOrigin"
                     android:id="@+id/tv_placeOrigin"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:text="@string/placeOrigin"
+                    android:textColor="@color/colorWhite" />
 
             </LinearLayout>
         </LinearLayout>
-       <LinearLayout
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content">
-           <Button
-               android:layout_width="0dp"
-               android:background="@color/colorYellow"
-               android:layout_height="wrap_content"
-               android:layout_centerHorizontal="true"
-               android:textColor="@color/colorWhite"
 
-               android:layout_weight="1"
-               android:text="@string/write" />
-           <Button
-               android:layout_weight="2"
-               android:layout_width="0dp"
-               android:background="@color/colorPink"
-               android:layout_height="wrap_content"
-               android:layout_centerHorizontal="true"
-               android:textColor="@color/colorWhite"
-               android:text="@string/seat" />
-       </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_15">
+
+            <Button
+                android:id="@+id/but_write_comment"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:background="@color/colorYellow"
+                android:text="@string/write"
+                android:textColor="@color/colorWhite" />
+
+            <Button
+                android:id="@+id/but_seat"
+                android:clickable="true"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="2"
+                android:background="@color/colorPink"
+                android:text="@string/seat"
+                android:textColor="@color/colorWhite" />
+        </LinearLayout>
     </LinearLayout>
 
     <com.bw.movie.view.DrawerLayout
@@ -101,14 +115,15 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true">
+
             <TextView
-                android:layout_width="match_parent"
                 android:id="@+id/drawerHandle"
-                android:layout_height="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_30"
                 android:layout_centerHorizontal="true"
-                android:textColor="@color/colorWhite"
                 android:gravity="center_horizontal|center_vertical"
-                android:text="V" />
+                android:text="V"
+                android:textColor="@color/colorWhite" />
 
             <LinearLayout
                 android:id="@+id/drawerContent"
@@ -118,19 +133,20 @@
                 android:background="@color/colorBlue"
                 android:gravity="center"
                 android:orientation="vertical">
+
                 <com.google.android.material.tabs.TabLayout
-                    app:tabTextColor="@color/colorWhite"
-                    app:tabSelectedTextColor="@color/colorRed"
                     android:id="@+id/tab_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"></com.google.android.material.tabs.TabLayout>
+                    app:tabSelectedTextColor="@color/colorRed"
+                    app:tabTextColor="@color/colorWhite"></com.google.android.material.tabs.TabLayout>
+
                 <androidx.viewpager.widget.ViewPager
-                    android:layout_width="match_parent"
-                    android:layout_weight="8"
                     android:id="@+id/vp_details"
-                    android:layout_height="0dp">
-                </androidx.viewpager.widget.ViewPager>
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="8"></androidx.viewpager.widget.ViewPager>
             </LinearLayout>
         </RelativeLayout>
     </com.bw.movie.view.DrawerLayout>

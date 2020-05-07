@@ -4,11 +4,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bw.movie.R;
 import com.bw.movie.adper.DetailsFragmentAdper;
@@ -40,13 +45,13 @@ import java.util.Date;
  *@time（时间）: 13:54
  *@author（作者）: 于晨雷
  **/
-public class MovieDetailsActivity extends BaseNetActivity {
+public class MovieDetailsActivity extends BaseNetActivity implements View.OnClickListener {
 
     private static final String TAG = "MovieDetailsActivity";
     private DrawerLayout done;
-    private android.widget.RelativeLayout drawerTow;
-    private android.widget.TextView drawerHandle;
-    private android.widget.LinearLayout drawerContent;
+    private RelativeLayout drawerTow;
+    private TextView drawerHandle;
+    private LinearLayout drawerContent;
     ArrayList<Fragment> fragments =new ArrayList<>();
     private SimpleDraweeView mSdvImageUrl;
     private TextView mTvName;
@@ -61,6 +66,8 @@ public class MovieDetailsActivity extends BaseNetActivity {
     private ViewPager mVpDetails;
     private int mMovieId;
     private TextView mTvDuration;
+    private Button mButWriteComment;
+    private Button mButSeat;
 
 
     @Override
@@ -77,13 +84,16 @@ public class MovieDetailsActivity extends BaseNetActivity {
     protected void onView() {
         EventBus.getDefault().register(this);
         initView();
-
+        mButWriteComment.setOnClickListener(this);
+        mButSeat.setOnClickListener(this);
     }
 
 
     @Override
     protected void onData() {
+
         done.setInitialState(DrawerLayout.State.Close);
+
         done.setDrawerListener(new DrawerLayout.DrawerListener() {
             @Override
             public void drawerOpened() {
@@ -95,6 +105,10 @@ public class MovieDetailsActivity extends BaseNetActivity {
 
             }
         });
+
+
+
+
         mCPreantent.onMovieDetailData(mMovieId);
 
 //        添加fragment到集合
@@ -122,11 +136,6 @@ public class MovieDetailsActivity extends BaseNetActivity {
     public void onShow(MovieEvenShow movieEvenShow){
         mMovieId = movieEvenShow.getMovieId();
     }
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        EventBus.getDefault().unregister(this);
-    }
 
     private void initView() {
         done = (DrawerLayout) findViewById(R.id.done);
@@ -145,6 +154,8 @@ public class MovieDetailsActivity extends BaseNetActivity {
         mTabDetails = (TabLayout) findViewById(R.id.tab_details);
         mVpDetails = (ViewPager) findViewById(R.id.vp_details);
         mTvDuration = (TextView) findViewById(R.id.tv_duration);
+        mButWriteComment = (Button) findViewById(R.id.but_write_comment);
+        mButSeat = (Button) findViewById(R.id.but_seat);
     }
 
     @Override
@@ -172,5 +183,25 @@ public class MovieDetailsActivity extends BaseNetActivity {
     @Override
     public void onFail(String mes) {
         Log.i(TAG, "onFail: "+mes);
+    }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        EventBus.getDefault().unregister(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.but_write_comment:
+                Intent intent = new Intent(MovieDetailsActivity.this, CommentActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.but_seat:
+                Intent intentOne = new Intent(MovieDetailsActivity.this, SelectTheatersActivity.class);
+                startActivity(intentOne);
+                Toast.makeText(this, "sss", Toast.LENGTH_SHORT).show();
+                break;
+        }
     }
 }

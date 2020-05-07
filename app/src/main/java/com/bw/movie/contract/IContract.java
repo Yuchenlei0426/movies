@@ -37,6 +37,8 @@ public interface IContract {
         void onRegionData(Object...args);
         //    根据区域查询影院
         void onCinemabyregionData(Object...args);
+//        写评论
+        void onMovieCommentData(Object...args);
 
     }
 }

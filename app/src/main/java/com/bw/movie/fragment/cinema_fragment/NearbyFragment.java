@@ -1,4 +1,4 @@
-package com.bw.movie.fragment.cinema;
+package com.bw.movie.fragment.cinema_fragment;
 
 
 import android.content.SharedPreferences;

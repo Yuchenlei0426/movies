@@ -1,7 +1,6 @@
 package com.bw.movie.fragment;
 
 
-import android.util.Log;
 import android.view.View;
 
 import androidx.fragment.app.Fragment;
@@ -10,15 +9,10 @@ import androidx.viewpager.widget.ViewPager;
 import com.bw.movie.R;
 import com.bw.movie.adper.cinema_adper.CinemaFragmentAdper;
 import com.bw.movie.base.BaseFragment;
-import com.bw.movie.bean.evenbean.DistShow;
-import com.bw.movie.bean.postion.District;
-import com.bw.movie.fragment.cinema.NearbyFragment;
-import com.bw.movie.fragment.cinema.RecommendFragment;
-import com.bw.movie.fragment.cinema.RegionFragment;
+import com.bw.movie.fragment.cinema_fragment.NearbyFragment;
+import com.bw.movie.fragment.cinema_fragment.RecommendFragment;
+import com.bw.movie.fragment.cinema_fragment.RegionFragment;
 import com.google.android.material.tabs.TabLayout;
-
-import org.greenrobot.eventbus.EventBus;
-import org.greenrobot.eventbus.Subscribe;
 
 import java.util.ArrayList;
 

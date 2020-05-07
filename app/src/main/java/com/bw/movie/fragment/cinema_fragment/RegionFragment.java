@@ -1,4 +1,4 @@
-package com.bw.movie.fragment.cinema;
+package com.bw.movie.fragment.cinema_fragment;
 
 
 import android.view.View;
@@ -16,7 +16,6 @@ import com.bw.movie.bean.cinema_bean.findCinemaByRegion.CinemaByRegionResult;
 import com.bw.movie.bean.cinema_bean.findregion.FindRegionResult;
 import com.bw.movie.bean.cinema_bean.findregion.FindRegionShow;
 import com.bw.movie.bean.evenbean.AreaShow;
-import com.bw.movie.bean.evenbean.MovieEvenShow;
 import com.bw.movie.preantent.CPreantent;
 
 import org.greenrobot.eventbus.EventBus;

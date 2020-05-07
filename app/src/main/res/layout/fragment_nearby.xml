@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorDark"
-    tools:context=".fragment.cinema.NearbyFragment">
+    tools:context=".fragment.cinema_fragment.NearbyFragment">
 <androidx.recyclerview.widget.RecyclerView
     android:id="@+id/rv_nearBy"
     android:layout_width="match_parent"

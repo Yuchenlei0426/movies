@@ -24,8 +24,7 @@ import com.nineoldandroids.animation.ValueAnimator;
  *@time（时间）: 16:35
  *@author（作者）: 于晨雷
  **/
-public class DrawerLayout extends RelativeLayout
-{
+public class DrawerLayout extends RelativeLayout {
 
     private static final String tag = DrawerLayout.class.getSimpleName();
     public static final int SNAP_VELOCITY = 200;
@@ -190,12 +189,14 @@ public class DrawerLayout extends RelativeLayout
                 processUp(event);
                 break;
         }
-        return true;
+
+            return true;
+
     }
 
     @Override
-    public boolean onInterceptTouchEvent(MotionEvent ev)
-    {
+    public boolean onInterceptTouchEvent(MotionEvent ev) {
+
         return super.onInterceptTouchEvent(ev);
     }
 

@@ -9,6 +9,7 @@ import com.bw.movie.bean.cinema_bean.findregion.FindRegionShow;
 import com.bw.movie.bean.cinema_bean.nearbycinemas.NearbyCinemas;
 import com.bw.movie.bean.code_send.CodeSendShow;
 import com.bw.movie.bean.comment_details.CommentShow;
+import com.bw.movie.bean.comment_write.WriteCommentShow;
 import com.bw.movie.bean.home_comingsoonmovie.ComingSoonShow;
 import com.bw.movie.bean.home_hotmovie.HotShow;
 import com.bw.movie.bean.home_release.ReleaseShow;
@@ -449,6 +450,42 @@ public class CModule {
                         String status = cinemaByRegion.getStatus();
                         if (status.equals("0000")) {
                             iModule.onSuccess(cinemaByRegion);
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        iModule.onFail(e.getMessage());
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+    }
+
+    /**
+     * 写评论
+     * @param iModule
+     * @param args
+     */
+    public void onMovieCommentData(IContract.IModule iModule, Object... args) {
+        IRequest iRequest = WorkUtil.getIncract().create(IRequest.class);
+        iRequest.movieComment((int)args[0],(String)args[1],(int)args[2],(String)args[3],(float)args[4])
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<WriteCommentShow>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(WriteCommentShow writeCommentShow) {
+                        String status = writeCommentShow.getStatus();
+                        if (status.equals("0000")) {
+                            iModule.onSuccess(writeCommentShow);
                         }
                     }
 

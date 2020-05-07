@@ -279,4 +279,43 @@ public class CPreantent extends BasePreantent implements IContract.IPreantent {
             }
         },args);
     }
+
+
+    /**
+     * 根据电影id，时间 查询播放影院信息
+     * @param args
+     */
+    @Override
+    public void onDateListData(Object... args) {
+        mCModule.onDateListData(new IContract.IModule() {
+            @Override
+            public void onSuccess(Object o) {
+                getView().onSuccess(o);
+            }
+
+            @Override
+            public void onFail(String mes) {
+                getView().onFail(mes);
+            }
+        });
+    }
+
+    /**
+     * 根据电影id，时间 查询播放影院信息
+     * @param args
+     */
+    @Override
+    public void onCinemasinfobydateData(Object... args) {
+        mCModule.onCinemasinfobydateData(new IContract.IModule() {
+            @Override
+            public void onSuccess(Object o) {
+                getView().onSuccess(o);
+            }
+
+            @Override
+            public void onFail(String mes) {
+                getView().onFail(mes);
+            }
+        },args);
+    }
 }

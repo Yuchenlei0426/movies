@@ -24,20 +24,20 @@
             android:layout_height="wrap_content">
             <TextView
                 android:id="@+id/tv_coming_name"
-                android:text="名字"
+                android:text="@string/name"
                 android:textColor="@color/colorWhite"
                 android:textSize="@dimen/dp_20"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <TextView
                 android:textColor="@color/colorWhite"
-                android:text="时间"
+                android:text="@string/time"
                 android:id="@+id/tv_coming_releaseTime"
                 android:textSize="@dimen/sp_15"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <TextView
-                android:text="多少人"
+                android:text="@string/how"
                 android:id="@+id/tv_coming_wantSeeNum"
                 android:textColor="@color/colorWhite"
                 android:textSize="@dimen/sp_15"

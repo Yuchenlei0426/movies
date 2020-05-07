@@ -189,9 +189,7 @@ public class DrawerLayout extends RelativeLayout {
                 processUp(event);
                 break;
         }
-
             return true;
-
     }
 
     @Override

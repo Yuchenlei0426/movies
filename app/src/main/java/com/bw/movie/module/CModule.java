@@ -7,9 +7,11 @@ import com.bw.movie.bean.cinema_bean.RecommendShow;
 import com.bw.movie.bean.cinema_bean.findCinemaByRegion.CinemaByRegion;
 import com.bw.movie.bean.cinema_bean.findregion.FindRegionShow;
 import com.bw.movie.bean.cinema_bean.nearbycinemas.NearbyCinemas;
+import com.bw.movie.bean.cinemas_date.CinemasDateShow;
 import com.bw.movie.bean.code_send.CodeSendShow;
 import com.bw.movie.bean.comment_details.CommentShow;
 import com.bw.movie.bean.comment_write.WriteCommentShow;
+import com.bw.movie.bean.date.DateShow;
 import com.bw.movie.bean.home_comingsoonmovie.ComingSoonShow;
 import com.bw.movie.bean.home_hotmovie.HotShow;
 import com.bw.movie.bean.home_release.ReleaseShow;
@@ -486,6 +488,77 @@ public class CModule {
                         String status = writeCommentShow.getStatus();
                         if (status.equals("0000")) {
                             iModule.onSuccess(writeCommentShow);
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        iModule.onFail(e.getMessage());
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+    }
+   /**
+     * 日期
+     * @param iModule
+     * @param args
+     */
+    public void onDateListData(IContract.IModule iModule, Object... args) {
+        IRequest iRequest = WorkUtil.getIncract().create(IRequest.class);
+        iRequest.dateList()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<DateShow>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(DateShow dateShow) {
+                        String status = dateShow.getStatus();
+                        if (status.equals("0000")) {
+                            iModule.onSuccess(dateShow);
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        iModule.onFail(e.getMessage());
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+    }
+
+    /**
+     *根据电影id，时间 查询播放影院信息
+     * @param iModule
+     * @param args
+     */
+    public void onCinemasinfobydateData(IContract.IModule iModule, Object... args) {
+        IRequest iRequest = WorkUtil.getIncract().create(IRequest.class);
+        iRequest.cinemasinfobydate((int)args[0],(String) args[1],(int)args[2],(int)args[3])
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<CinemasDateShow>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(CinemasDateShow cinemasDateShow) {
+                        String status = cinemasDateShow.getStatus();
+                        if (status.equals("0000")) {
+                            iModule.onSuccess(cinemasDateShow);
                         }
                     }
 

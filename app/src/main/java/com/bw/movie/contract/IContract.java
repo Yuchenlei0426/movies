@@ -39,6 +39,10 @@ public interface IContract {
         void onCinemabyregionData(Object...args);
 //        写评论
         void onMovieCommentData(Object...args);
+//        日期
+        void onDateListData(Object...args);
+//        根据电影id，时间 查询播放影院信息
+        void onCinemasinfobydateData(Object...args);
 
     }
 }

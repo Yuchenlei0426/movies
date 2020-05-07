@@ -79,7 +79,6 @@
             android:layout_marginBottom="@dimen/dp_15">
 
             <Button
-                android:id="@+id/but_write_comment"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
@@ -89,7 +88,6 @@
                 android:textColor="@color/colorWhite" />
 
             <Button
-                android:id="@+id/but_seat"
                 android:clickable="true"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -147,6 +145,33 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="8"></androidx.viewpager.widget.ViewPager>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp_15">
+
+                    <Button
+                        android:id="@+id/but_write_comment"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_weight="1"
+                        android:background="@color/colorYellow"
+                        android:text="@string/write"
+                        android:textColor="@color/colorWhite" />
+
+                    <Button
+                        android:id="@+id/but_seat"
+                        android:clickable="true"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_weight="2"
+                        android:background="@color/colorPink"
+                        android:text="@string/seat"
+                        android:textColor="@color/colorWhite" />
+                </LinearLayout>
+
             </LinearLayout>
         </RelativeLayout>
     </com.bw.movie.view.DrawerLayout>

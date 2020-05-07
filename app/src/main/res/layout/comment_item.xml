@@ -114,7 +114,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/dp_10"
-                android:text="多少人"
+                android:text="@string/how"
                 android:textColor="@color/colorWhite" />
         </LinearLayout>
     </RelativeLayout>

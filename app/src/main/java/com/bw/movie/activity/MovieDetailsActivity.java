@@ -200,7 +200,6 @@ public class MovieDetailsActivity extends BaseNetActivity implements View.OnClic
             case R.id.but_seat:
                 Intent intentOne = new Intent(MovieDetailsActivity.this, SelectTheatersActivity.class);
                 startActivity(intentOne);
-                Toast.makeText(this, "sss", Toast.LENGTH_SHORT).show();
                 break;
         }
     }

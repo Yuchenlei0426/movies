@@ -30,6 +30,8 @@ public interface Api {
 //    根据区域查询影院
     String CINEMABYREGION_URL ="cinema/v2/findCinemaByRegion";
     String MOVIECOMMENT_URL ="movie/v1/verify/movieComment";
+    String FINDDATELIST_URL ="tool/v2/findDateList";
+    String CINEMASINFOBYDATE_URL ="movie/v2/findCinemasInfoByDate";
 
 
 

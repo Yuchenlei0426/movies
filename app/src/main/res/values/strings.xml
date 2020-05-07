@@ -46,5 +46,10 @@
     <string name="movieDirector">导演</string>
     <string name="intro_movieActor">演员</string>
     <string name="intro_graded">分数</string>
+    <string name="address">地址</string>
+    <string name="cinemas">CGV影城</string>
+    <string name="time">时间</string>
+    <string name="how">多少人</string>
+    <string name="date">日期</string>
 
 </resources>

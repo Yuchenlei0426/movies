@@ -5,9 +5,11 @@ import com.bw.movie.bean.cinema_bean.RecommendShow;
 import com.bw.movie.bean.cinema_bean.findCinemaByRegion.CinemaByRegion;
 import com.bw.movie.bean.cinema_bean.findregion.FindRegionShow;
 import com.bw.movie.bean.cinema_bean.nearbycinemas.NearbyCinemas;
+import com.bw.movie.bean.cinemas_date.CinemasDateShow;
 import com.bw.movie.bean.code_send.CodeSendShow;
 import com.bw.movie.bean.comment_details.CommentShow;
 import com.bw.movie.bean.comment_write.WriteCommentShow;
+import com.bw.movie.bean.date.DateShow;
 import com.bw.movie.bean.home_comingsoonmovie.ComingSoonShow;
 import com.bw.movie.bean.home_hotmovie.HotShow;
 import com.bw.movie.bean.home_release.ReleaseShow;
@@ -92,12 +94,21 @@ public interface IRequest {
     Observable<CinemaByRegion> cinemabyregion(@Query("regionId") int regionId);
 
 
-//    电影评论
+    //    电影评论
     @POST(Api.MOVIECOMMENT_URL)
     @FormUrlEncoded
-    Observable<WriteCommentShow> movieComment(@Header("userId")int userId,
-                                              @Header("sessionId")String sessionId,
+    Observable<WriteCommentShow> movieComment(@Header("userId") int userId,
+                                              @Header("sessionId") String sessionId,
                                               @Field("movieId") int movieId,
                                               @Field("commentContent") String commentContent,
-                                              @Field("score")float score);
+                                              @Field("score") float score);
+
+    //    日期
+    @GET(Api.FINDDATELIST_URL)
+    Observable<DateShow> dateList();
+
+    //根据电影id，时间 查询播放影院信息
+    @GET(Api.CINEMASINFOBYDATE_URL)
+    Observable<CinemasDateShow> cinemasinfobydate(@Query("movieId") int movieId, @Query("date") String date, @Query("page") int page, @Query("count") int count);
+
 }

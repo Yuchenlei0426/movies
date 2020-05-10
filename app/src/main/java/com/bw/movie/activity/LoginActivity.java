@@ -3,6 +3,7 @@ package com.bw.movie.activity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -14,12 +15,26 @@ import android.widget.Toast;
 
 import com.bw.movie.R;
 import com.bw.movie.base.BaseNetActivity;
+import com.bw.movie.bean.evenbean.WXCodeBean;
 import com.bw.movie.bean.login_bean.LoginShow;
+import com.bw.movie.bean.wechat.WeChatShow;
 import com.bw.movie.preantent.CPreantent;
+import com.bw.movie.utils.App;
 import com.bw.movie.utils.Base64;
 import com.bw.movie.utils.EmailRegular;
 import com.bw.movie.utils.EncryptUtil;
+import com.tencent.mm.opensdk.modelmsg.SendAuth;
 
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
+
+/**
+ *@describe(描述)：登录
+ *@data（日期）: 2020/5/8
+ *@time（时间）: 15:55
+ *@author（作者）: 于晨雷
+ **/
 public class LoginActivity extends BaseNetActivity implements View.OnClickListener {
     private static final String TAG = "LoginActivity";
     private EditText mEtEmail;
@@ -45,6 +60,11 @@ public class LoginActivity extends BaseNetActivity implements View.OnClickListen
 
     @Override
     protected void onData() {
+        if (!EventBus.getDefault().isRegistered(this)) {
+            EventBus.getDefault().register(this);
+        }
+
+
 
     }
 
@@ -55,6 +75,11 @@ public class LoginActivity extends BaseNetActivity implements View.OnClickListen
             Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(LoginActivity.this,HomeActivity.class);
             startActivity(intent);
+            finish();
+        }
+        if (o instanceof WeChatShow) {
+            String message = ((WeChatShow) o).getMessage();
+            Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
             finish();
         }
 
@@ -96,9 +121,32 @@ public class LoginActivity extends BaseNetActivity implements View.OnClickListen
                 startActivity(intent);
                 break;
             case R.id.iv_we_chat:
-
+                doWxLogin();
                 break;
 
         }
+    }
+
+    private void doWxLogin() {
+        SendAuth.Req req = new SendAuth.Req();
+        req.scope = "snsapi_userinfo";
+        req.state = "wechat_sdk_demo_test";
+        App.getWxApi().sendReq(req);
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN, sticky = true)
+    public void receiveWXCode(WXCodeBean wxCodeBean) {
+        Log.i(TAG, "receiveWXCode: "+wxCodeBean.getCode());
+//        EventBus.getDefault().removeStickyEvent(wxCodeBean);
+        String code = wxCodeBean.getCode();
+        mCPreantent.onweChatData(code);
+
+
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        EventBus.getDefault().unregister(this);
     }
 }

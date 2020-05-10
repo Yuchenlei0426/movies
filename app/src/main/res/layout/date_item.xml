@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="wrap_content"
+    android:background="@color/colorBlue"
+    android:layout_margin="@dimen/dp_20"
+    android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/tv_dates"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/sp_15"
+        android:text="@string/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</LinearLayout>

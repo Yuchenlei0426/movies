@@ -1,25 +1,21 @@
 package com.bw.movie.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bw.movie.R;
-import com.bw.movie.adper.DetailsFragmentAdper;
-import com.bw.movie.base.BaseActivity;
+import com.bw.movie.adper.fragment_adper.DetailsFragmentAdper;
 import com.bw.movie.base.BaseNetActivity;
 import com.bw.movie.bean.evenbean.MovieEvenShow;
+import com.bw.movie.bean.evenbean.MovieIdShow;
 import com.bw.movie.bean.movie_detail.DetailResult;
 import com.bw.movie.bean.movie_detail.MovieDetailShow;
 import com.bw.movie.fragment.details_fragment.CommentFragment;
@@ -28,7 +24,6 @@ import com.bw.movie.fragment.details_fragment.IntroduceFragment;
 import com.bw.movie.fragment.details_fragment.StillFragment;
 import com.bw.movie.preantent.CPreantent;
 import com.bw.movie.view.DrawerLayout;
-import com.facebook.drawee.view.DraweeView;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.google.android.material.tabs.TabLayout;
 
@@ -40,10 +35,10 @@ import java.util.ArrayList;
 import java.util.Date;
 
 /**
- *@describe(描述)：电影详情
- *@data（日期）: 2020/4/22
- *@time（时间）: 13:54
- *@author（作者）: 于晨雷
+ * @describe(描述)：电影详情
+ * @data（日期）: 2020/4/22
+ * @time（时间）: 13:54
+ * @author（作者）: 于晨雷
  **/
 public class MovieDetailsActivity extends BaseNetActivity implements View.OnClickListener {
 
@@ -52,7 +47,7 @@ public class MovieDetailsActivity extends BaseNetActivity implements View.OnClic
     private RelativeLayout drawerTow;
     private TextView drawerHandle;
     private LinearLayout drawerContent;
-    ArrayList<Fragment> fragments =new ArrayList<>();
+    ArrayList<Fragment> fragments = new ArrayList<>();
     private SimpleDraweeView mSdvImageUrl;
     private TextView mTvName;
     private TextView mTvMovieType;
@@ -82,12 +77,16 @@ public class MovieDetailsActivity extends BaseNetActivity implements View.OnClic
 
     @Override
     protected void onView() {
-        EventBus.getDefault().register(this);
+
         initView();
+        EventBus.getDefault().register(this);
         mButWriteComment.setOnClickListener(this);
         mButSeat.setOnClickListener(this);
     }
-
+    @Subscribe(sticky = true)
+    public void onShow(MovieEvenShow movieEvenShow) {
+        mMovieId = movieEvenShow.getMovieId();
+    }
 
     @Override
     protected void onData() {
@@ -105,8 +104,6 @@ public class MovieDetailsActivity extends BaseNetActivity implements View.OnClic
 
             }
         });
-
-
 
 
         mCPreantent.onMovieDetailData(mMovieId);
@@ -132,10 +129,7 @@ public class MovieDetailsActivity extends BaseNetActivity implements View.OnClic
         mTabDetails.getTabAt(3).setText(getResources().getText(R.string.Comment));
     }
 
-    @Subscribe(sticky = true)
-    public void onShow(MovieEvenShow movieEvenShow){
-        mMovieId = movieEvenShow.getMovieId();
-    }
+
 
     private void initView() {
         done = (DrawerLayout) findViewById(R.id.done);
@@ -182,12 +176,7 @@ public class MovieDetailsActivity extends BaseNetActivity implements View.OnClic
 
     @Override
     public void onFail(String mes) {
-        Log.i(TAG, "onFail: "+mes);
-    }
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        EventBus.getDefault().unregister(this);
+        Log.i(TAG, "onFail: " + mes);
     }
 
     @Override
@@ -199,8 +188,16 @@ public class MovieDetailsActivity extends BaseNetActivity implements View.OnClic
                 break;
             case R.id.but_seat:
                 Intent intentOne = new Intent(MovieDetailsActivity.this, SelectTheatersActivity.class);
+                EventBus.getDefault().postSticky(new MovieIdShow(mMovieId));
                 startActivity(intentOne);
                 break;
         }
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        EventBus.getDefault().unregister(this);
+    }
+
 }

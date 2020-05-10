@@ -1,6 +1,15 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+
+        release {
+            storeFile file('E:\\xmtow\\Movie\\app\\movie.keystore')
+            storePassword '123456'
+            keyPassword '123456'
+            keyAlias = 'bw_movie'
+        }
+    }
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
     defaultConfig {
@@ -12,12 +21,18 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
     }
+
     buildTypes {
+        debug{
+            signingConfig signingConfigs.release
+        }
         release {
             minifyEnabled false
+            signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
         sourceCompatibility = '1.8'
         targetCompatibility = '1.8'
@@ -68,11 +83,11 @@ dependencies {
     implementation 'com.facebook.fresco:fresco:1.9.0'
     implementation 'com.github.bumptech.glide:glide:4.9.0'
     implementation 'com.amap.api:location:latest.integration'
-
     //沉浸式状态栏
     implementation 'com.jaeger.statusbarutil:library:1.5.1'
     implementation 'cn.jzvd:jiaozivideoplayer:7.3.0'
     implementation 'me.relex:photodraweeview:1.1.2'
+    implementation 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+'
+    implementation files('libs\\libammsdk.jar')
     implementation files('libs\\nineoldandroids.jar')
-
 }

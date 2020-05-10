@@ -1,5 +1,6 @@
 package com.bw.movie.adper.recommend;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,8 +10,12 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bw.movie.R;
+import com.bw.movie.activity.CinemaDetailsActivity;
 import com.bw.movie.bean.cinema_bean.RecommendResult;
+import com.bw.movie.bean.evenbean.CineamaIdShow;
 import com.facebook.drawee.view.SimpleDraweeView;
+
+import org.greenrobot.eventbus.EventBus;
 
 import java.util.List;
 /**
@@ -44,6 +49,16 @@ public class RecommendAdper extends RecyclerView.Adapter<RecommendAdper.Recommen
         holder.tv_ct_name.setText(name);
         String address = result.get(position).getAddress();
         holder.tv_ct_address.setText(address);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(holder.itemView.getContext(), CinemaDetailsActivity.class);
+                int cinemaId = result.get(position).getId();
+                CineamaIdShow cineamaIdShow = new CineamaIdShow(cinemaId);
+                EventBus.getDefault().postSticky(cineamaIdShow);
+                holder.itemView.getContext().startActivity(intent);
+            }
+        });
     }
 
     @Override

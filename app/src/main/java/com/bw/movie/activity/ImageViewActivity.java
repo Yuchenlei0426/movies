@@ -20,6 +20,12 @@ import org.greenrobot.eventbus.Subscribe;
 import me.relex.photodraweeview.OnPhotoTapListener;
 import me.relex.photodraweeview.PhotoDraweeView;
 
+/**
+ *@describe(描述)：图片
+ *@data（日期）: 2020/5/8
+ *@time（时间）: 15:55
+ *@author（作者）: 于晨雷
+ **/
 public class ImageViewActivity extends Activity {
     private PhotoDraweeView mPhotoView;
     private String mImages;

@@ -12,6 +12,8 @@ import com.bw.movie.bean.code_send.CodeSendShow;
 import com.bw.movie.bean.comment_details.CommentShow;
 import com.bw.movie.bean.comment_write.WriteCommentShow;
 import com.bw.movie.bean.date.DateShow;
+import com.bw.movie.bean.findHotMovieList.CinemaInfoDetailsShow;
+import com.bw.movie.bean.findcinemasInfobyprice.FindCinemasInfoByPrice;
 import com.bw.movie.bean.home_comingsoonmovie.ComingSoonShow;
 import com.bw.movie.bean.home_hotmovie.HotShow;
 import com.bw.movie.bean.home_release.ReleaseShow;
@@ -19,7 +21,12 @@ import com.bw.movie.bean.login_bean.LoginResult;
 import com.bw.movie.bean.login_bean.LoginShow;
 import com.bw.movie.bean.login_bean.UserInfo;
 import com.bw.movie.bean.movie_detail.MovieDetailShow;
+import com.bw.movie.bean.movieschedule.MovieScheduleShow;
 import com.bw.movie.bean.register.RegisterShow;
+import com.bw.movie.bean.seatInfo.SaetInfoShow;
+import com.bw.movie.bean.wechat.WeChatResult;
+import com.bw.movie.bean.wechat.WeChatShow;
+import com.bw.movie.bean.wechat.WeChatUserInfo;
 import com.bw.movie.contract.IContract;
 import com.bw.movie.utils.App;
 import com.bw.movie.utils.IRequest;
@@ -30,6 +37,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 
+import static com.bw.movie.utils.App.mLogin;
 /**
  * @describe(描述)：这是Moudle层
  * @data（日期）: 2020/4/24
@@ -573,5 +581,197 @@ public class CModule {
                     }
                 });
     }
+
+    /**
+     * 电影院信息
+     * @param iModule
+     * @param args
+     */
+    public void onCinemaInfoData(IContract.IModule iModule, Object... args) {
+        IRequest iRequest = WorkUtil.getIncract().create(IRequest.class);
+        iRequest.findCinemaInfo((int)args[0],(String)args[1],(int)args[2])
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<CinemaInfoDetailsShow>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(CinemaInfoDetailsShow homeShowCinemaInfo) {
+                        String status = homeShowCinemaInfo.getStatus();
+                        if (status.equals("0000")) {
+                            iModule.onSuccess(homeShowCinemaInfo);
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        iModule.onFail(e.getMessage());
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+    }
+
+    /**
+     * 根据价格查询影院
+     * @param iModule
+     * @param args
+     */
+   public void onFindcinemasinfobyPriceData(IContract.IModule iModule, Object... args) {
+        IRequest iRequest = WorkUtil.getIncract().create(IRequest.class);
+        iRequest.findcinemasinfobyPrice((int)args[0],(int)args[1],(int)args[2])
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<FindCinemasInfoByPrice>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(FindCinemasInfoByPrice findCinemasInfoByPrice) {
+                        String status = findCinemasInfoByPrice.getStatus();
+                        if (status.equals("0000")) {
+                            iModule.onSuccess(findCinemasInfoByPrice);
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        iModule.onFail(e.getMessage());
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+    }
+    /**
+     * 根据电影ID 和影院ID 查询影厅
+     * @param iModule
+     * @param args
+     */
+   public void onFindMovieScheduleData(IContract.IModule iModule, Object... args) {
+        IRequest iRequest = WorkUtil.getIncract().create(IRequest.class);
+        iRequest.findMovieSchedule((int)args[0],(int)args[1])
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<MovieScheduleShow>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(MovieScheduleShow movieScheduleShow) {
+                        String status = movieScheduleShow.getStatus();
+                        if (status.equals("0000")) {
+                            iModule.onSuccess(movieScheduleShow);
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        iModule.onFail(e.getMessage());
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+    }
+    /**
+     * 根据影厅ID 查询座位
+     * @param iModule
+     * @param args
+     */
+   public void onFindSeatInfoData(IContract.IModule iModule, Object... args) {
+        IRequest iRequest = WorkUtil.getIncract().create(IRequest.class);
+        iRequest.findSeatInfo((int)args[0])
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<SaetInfoShow>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(SaetInfoShow saetInfoShow) {
+                        String status = saetInfoShow.getStatus();
+                        if (status.equals("0000")) {
+                            iModule.onSuccess(saetInfoShow);
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        iModule.onFail(e.getMessage());
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+    }
+    /**
+     * 根据影厅ID  微信登录
+     * @param iModule
+     * @param args
+     */
+   public void onweChatData(IContract.IModule iModule, Object... args) {
+        IRequest iRequest = WorkUtil.getIncract().create(IRequest.class);
+        iRequest.weChat((String) args[0])
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<WeChatShow>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(WeChatShow weChatShow) {
+                        String status = weChatShow.getStatus();
+                        if (status.equals("0000")) {
+                            iModule.onSuccess(weChatShow);
+                            SharedPreferences mLogin = App.mLogin;
+                            SharedPreferences.Editor edit = mLogin.edit();
+                            WeChatResult result = weChatShow.getResult();
+                            String sessionId = result.getSessionId();
+                            int userId = result.getUserId();
+                            WeChatUserInfo userInfo = result.getUserInfo();
+                            String nickName = userInfo.getNickName();
+                            String headPic = userInfo.getHeadPic();
+                            edit.putString("sessionId", sessionId);
+                            edit.putInt("userId", userId);
+                            edit.putString("headPic", headPic);
+                            edit.putString("nickName", nickName);
+                            edit.commit();
+
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        iModule.onFail(e.getMessage());
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+    }
+
 
 }

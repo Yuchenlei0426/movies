@@ -135,7 +135,7 @@
             android:layout_weight="1">
 
             <LinearLayout
-                android:id="@+id/my_btn1"
+                android:id="@+id/my_btn_interest"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -158,7 +158,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/my_btn2"
+                android:id="@+id/my_btn_reservation"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -175,13 +175,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:text="我的预约"
+                    android:text="@string/My_reservation"
                     android:textColor="#fff" />
 
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/my_btn3"
+                android:id="@+id/my_btn_buy_ticket"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -213,7 +213,7 @@
             android:layout_weight="1">
 
             <LinearLayout
-                android:id="@+id/my_btn4"
+                android:id="@+id/my_btn_read_movie"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -236,7 +236,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/my_btn5"
+                android:id="@+id/my_btn_my_comment"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -259,7 +259,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/my_btn6"
+                android:id="@+id/my_btn_feedback"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -291,7 +291,7 @@
             android:layout_weight="1">
 
             <LinearLayout
-                android:id="@+id/my_btn7"
+                android:id="@+id/my_btn_setting"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"

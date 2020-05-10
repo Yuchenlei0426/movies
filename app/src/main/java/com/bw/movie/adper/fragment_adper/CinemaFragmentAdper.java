@@ -1,4 +1,4 @@
-package com.bw.movie.adper;
+package com.bw.movie.adper.fragment_adper;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -7,11 +7,17 @@ import androidx.fragment.app.FragmentPagerAdapter;
 
 import java.util.ArrayList;
 
-public class DetailsFragmentAdper extends FragmentPagerAdapter {
-    ArrayList<Fragment> fragments;
-    public DetailsFragmentAdper(FragmentManager supportFragmentManager) {
-        super(supportFragmentManager);
+/**
+ *@describe(描述)：影院fragment
+ *@data（日期）: 2020/5/8
+ *@time（时间）: 16:01
+ *@author（作者）: 于晨雷
+ **/
+public class CinemaFragmentAdper extends FragmentPagerAdapter {
+    public CinemaFragmentAdper(FragmentManager childFragmentManager) {
+        super(childFragmentManager);
     }
+    ArrayList<Fragment> fragments;
     public void addAll(ArrayList<Fragment> fragments){
         this.fragments=fragments;
     }

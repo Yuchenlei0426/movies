@@ -51,5 +51,20 @@
     <string name="time">时间</string>
     <string name="how">多少人</string>
     <string name="date">日期</string>
+    <string name="title">标题</string>
+    <string name="cinema_details">影院详情</string>
+    <string name="cinema_name_details">名称</string>
+    <string name="cinema_type_details">类别</string>
+    <string name="cinema_here_details">到这里去</string>
+    <string name="cinema_phone_details">电话</string>
+    <string name="cinema_riding_details">乘车路线</string>
+    <string name="cinema_route_details">路线</string>
+    <string name="Schedule">排期</string>
+    <string name="Movie_details">电影详情</string>
+    <string name="movie_hall">影厅</string>
+    <string name="start_time">开始时间</string>
+    <string name="division_time">-----</string>
+    <string name="finish_time">结束时间</string>
+
 
 </resources>

@@ -95,6 +95,7 @@ public class HomeAdper extends RecyclerView.Adapter {
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         int itemViewType = getItemViewType(position);
+        //        banner
         if (itemViewType == BANNER_TYPE) {
             BannerViewHodule bannerViewHodule = (BannerViewHodule) holder;
             if (bannerViewHodule.homeBanner != null) {
@@ -111,6 +112,8 @@ public class HomeAdper extends RecyclerView.Adapter {
                 }
             });
         }
+        //        正在热映
+
         if (itemViewType == RELEASE_TYPE) {
             ReleaseViewHodule releaseViewHodule = (ReleaseViewHodule) holder;
             ReleaseAdper releaseAdper = new ReleaseAdper();
@@ -119,6 +122,7 @@ public class HomeAdper extends RecyclerView.Adapter {
             ((ReleaseViewHodule) holder).rvHot.setLayoutManager(linearLayoutManager);
             ((ReleaseViewHodule) holder).rvHot.setAdapter(releaseAdper);
         }
+        //        即将上映
         if (itemViewType == COMINGSOON_TYPE) {
             if (holder instanceof ComingSoonViewHodule) {
                 ComingSoonAdper comingSoonAdper = new ComingSoonAdper();
@@ -128,6 +132,7 @@ public class HomeAdper extends RecyclerView.Adapter {
                 ((ComingSoonViewHodule) holder).rvComingSoon.setAdapter(comingSoonAdper);
             }
         }
+        //        热门电影
         if (itemViewType == HOT_TYPE) {
             if (holder instanceof HotViewHodule) {
                 String horizontalImage = mHotResults.get(0).getHorizontalImage();

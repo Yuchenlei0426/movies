@@ -10,8 +10,12 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bw.movie.R;
+import com.bw.movie.activity.CinemaDetailsActivity;
 import com.bw.movie.bean.cinema_bean.nearbycinemas.NearbyCinemasResult;
+import com.bw.movie.bean.evenbean.CineamaIdShow;
 import com.facebook.drawee.view.SimpleDraweeView;
+
+import org.greenrobot.eventbus.EventBus;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,9 +45,12 @@ public class NearbyCinemasAdper extends RecyclerView.Adapter<NearbyCinemasAdper.
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-/*                Intent intent = new Intent(holder.itemView.getContext(), CinemaDetailsActivity.class);
+                Intent intent = new Intent(holder.itemView.getContext(), CinemaDetailsActivity.class);
+                int cinemaId = result.get(position).getId();
+                CineamaIdShow cineamaIdShow = new CineamaIdShow(cinemaId);
+                EventBus.getDefault().postSticky(cineamaIdShow);
                 holder.itemView.getContext().startActivity(intent);
-//                电影评论*/
+//                电影评论
             }
         });
     }

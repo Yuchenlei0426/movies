@@ -17,6 +17,12 @@ import org.greenrobot.eventbus.EventBus;
 
 import java.util.List;
 
+/**
+ *@describe(描述)：区域
+ *@data（日期）: 2020/5/8
+ *@time（时间）: 15:18
+ *@author（作者）: 于晨雷
+ **/
 public class RegionAdper extends RecyclerView.Adapter<RegionAdper.RegionViewHolder> {
     List<FindRegionResult> result;
     public  void addAll(List<FindRegionResult> result){

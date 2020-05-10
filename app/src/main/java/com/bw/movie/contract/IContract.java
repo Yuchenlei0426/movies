@@ -44,5 +44,14 @@ public interface IContract {
 //        根据电影id，时间 查询播放影院信息
         void onCinemasinfobydateData(Object...args);
 
+//        查询电影信息明细
+        void onCinemaInfoData(Object...args);
+        void onFindcinemasinfobyPriceData(Object...args);
+        void onFindMovieScheduleData(Object...args);
+        void onFindSeatInfoData(Object...args);
+        void onweChatData(Object...args);
+
+
+
     }
 }

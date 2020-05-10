@@ -19,6 +19,12 @@ import org.greenrobot.eventbus.EventBus;
 
 import java.util.List;
 
+/**
+ *@describe(描述)：热门电影
+ *@data（日期）: 2020/5/8
+ *@time（时间）: 15:58
+ *@author（作者）: 于晨雷
+ **/
 public class HotAdper extends RecyclerView.Adapter<HotAdper.HotViewHodler> {
     List<HotResult> mHotResults;
 

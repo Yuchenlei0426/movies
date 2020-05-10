@@ -60,6 +60,7 @@ public class IntroduceFragment extends BaseNetFragment {
 
     @Subscribe(sticky = true)
     public void onShow(MovieEvenShow movieEvenShow) {
+
         mMovieId = movieEvenShow.getMovieId();
     }
 

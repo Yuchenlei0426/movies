@@ -18,7 +18,12 @@ import com.bw.movie.preantent.CPreantent;
 import com.bw.movie.utils.Base64;
 import com.bw.movie.utils.EmailRegular;
 import com.bw.movie.utils.EncryptUtil;
-
+/**
+ *@describe(描述)：注册
+ *@data（日期）: 2020/5/8
+ *@time（时间）: 15:55
+ *@author（作者）: 于晨雷
+ **/
 public class RegisterActivity extends BaseNetActivity implements View.OnClickListener {
     private static final String TAG = "RegisterActivity";
 

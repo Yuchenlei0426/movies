@@ -7,7 +7,7 @@ import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
 import com.bw.movie.R;
-import com.bw.movie.adper.cinema_adper.CinemaFragmentAdper;
+import com.bw.movie.adper.fragment_adper.CinemaFragmentAdper;
 import com.bw.movie.base.BaseFragment;
 import com.bw.movie.fragment.cinema_fragment.NearbyFragment;
 import com.bw.movie.fragment.cinema_fragment.RecommendFragment;
@@ -23,7 +23,7 @@ import java.util.ArrayList;
  *@author（作者）: 于晨雷
  **/
 public class CinemaFragment extends BaseFragment {
-    private static final String TAG = "CinemaFragment";
+    private static final String TAG = "CinemaDetailsFragment";
 
     private TabLayout mTabCineam;
     private ViewPager mVpCineam;

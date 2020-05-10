@@ -318,4 +318,83 @@ public class CPreantent extends BasePreantent implements IContract.IPreantent {
             }
         },args);
     }
+
+    /**
+     * 电影院信息
+     * @param args
+     */
+    @Override
+    public void onCinemaInfoData(Object... args) {
+        mCModule.onCinemaInfoData(new IContract.IModule() {
+            @Override
+            public void onSuccess(Object o) {
+                getView().onSuccess(o);
+            }
+
+            @Override
+            public void onFail(String mes) {
+                getView().onFail(mes);
+            }
+        },args);
+    }
+
+    @Override
+    public void onFindcinemasinfobyPriceData(Object... args) {
+        mCModule.onFindcinemasinfobyPriceData(new IContract.IModule() {
+            @Override
+            public void onSuccess(Object o) {
+                getView().onSuccess(o);
+            }
+
+            @Override
+            public void onFail(String mes) {
+                getView().onFail(mes);
+            }
+        },args);
+    }
+
+    @Override
+    public void onFindMovieScheduleData(Object... args) {
+        mCModule.onFindMovieScheduleData(new IContract.IModule() {
+            @Override
+            public void onSuccess(Object o) {
+                getView().onSuccess(o);
+            }
+
+            @Override
+            public void onFail(String mes) {
+                getView().onFail(mes);
+            }
+        },args);
+    }
+
+    @Override
+    public void onFindSeatInfoData(Object... args) {
+        mCModule.onFindSeatInfoData(new IContract.IModule() {
+            @Override
+            public void onSuccess(Object o) {
+                getView().onSuccess(o);
+            }
+
+            @Override
+            public void onFail(String mes) {
+                getView().onFail(mes);
+            }
+        },args);
+    }
+
+    @Override
+    public void onweChatData(Object... args) {
+        mCModule.onweChatData(new IContract.IModule() {
+            @Override
+            public void onSuccess(Object o) {
+                getView().onSuccess(o);
+            }
+
+            @Override
+            public void onFail(String mes) {
+                getView().onFail(mes);
+            }
+        },args);
+    }
 }

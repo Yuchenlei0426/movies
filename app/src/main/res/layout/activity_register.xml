@@ -7,6 +7,10 @@
     android:orientation="vertical"
     android:background="@color/colorBlue"
     tools:context=".activity.RegisterActivity">
+    <com.bw.movie.view.TitleView
+        app:text="@string/register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></com.bw.movie.view.TitleView>
 <LinearLayout
     android:layout_weight="1"
     android:background="@drawable/background_login"

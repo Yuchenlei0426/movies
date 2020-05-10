@@ -20,6 +20,12 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+/**
+ *@describe(描述)：倒计时
+ *@data（日期）: 2020/5/8
+ *@time（时间）: 15:57
+ *@author（作者）: 于晨雷
+ **/
 public class CountdownActivity extends AppCompatActivity {
 
     @BindView(R.id.iv_Guidepages)

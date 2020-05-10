@@ -10,12 +10,20 @@ import com.bw.movie.bean.code_send.CodeSendShow;
 import com.bw.movie.bean.comment_details.CommentShow;
 import com.bw.movie.bean.comment_write.WriteCommentShow;
 import com.bw.movie.bean.date.DateShow;
+import com.bw.movie.bean.findHotMovieList.CinemaInfoDetailsShow;
+import com.bw.movie.bean.findcinemasInfobyprice.FindCinemasInfoByPrice;
 import com.bw.movie.bean.home_comingsoonmovie.ComingSoonShow;
 import com.bw.movie.bean.home_hotmovie.HotShow;
 import com.bw.movie.bean.home_release.ReleaseShow;
 import com.bw.movie.bean.login_bean.LoginShow;
 import com.bw.movie.bean.movie_detail.MovieDetailShow;
+import com.bw.movie.bean.movieschedule.MovieSchedule;
+import com.bw.movie.bean.movieschedule.MovieScheduleShow;
 import com.bw.movie.bean.register.RegisterShow;
+import com.bw.movie.bean.seatInfo.SaetInfoShow;
+import com.bw.movie.bean.wechat.WeChatShow;
+
+import java.util.List;
 
 import io.reactivex.Observable;
 import retrofit2.http.Field;
@@ -110,5 +118,30 @@ public interface IRequest {
     //根据电影id，时间 查询播放影院信息
     @GET(Api.CINEMASINFOBYDATE_URL)
     Observable<CinemasDateShow> cinemasinfobydate(@Query("movieId") int movieId, @Query("date") String date, @Query("page") int page, @Query("count") int count);
+
+    //    影院详情
+    @GET(Api.FINDCINEMAINFO_URL)
+    Observable<CinemaInfoDetailsShow> findCinemaInfo(@Header("userId") int userId
+            , @Header("sessionId") String sessionId
+            , @Query("cinemaId") Integer cinemaId);
+
+
+    //    根据价格查询影院
+    @GET(Api.FINDCINEMASINFOBYPRICE_URL)
+    Observable<FindCinemasInfoByPrice> findcinemasinfobyPrice(@Query("movieId") int movieId,
+                                                              @Query("page") int page,
+                                                              @Query("count") int count);
+
+    //    根据电影ID 和影院ID 查询影厅
+    @GET(Api.FINDMOVIESCHEDULE_URL)
+    Observable<MovieScheduleShow> findMovieSchedule(@Query("movieId") Integer movieId, @Query("cinemaId") Integer cinemaId);
+
+    //    根据影厅ID 查询座位
+    @GET(Api.FINDSEATINFO_URL)
+    Observable<SaetInfoShow> findSeatInfo(@Query("hallId") Integer hallId);
+//    微信登录
+    @POST(Api.WECHATBINDINGLOGIN_URL)
+    @FormUrlEncoded
+    Observable<WeChatShow> weChat(@Field("code")String code);
 
 }

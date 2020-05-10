@@ -3,11 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorDark"
-    tools:context=".fragment.select_fragment.BottomPriceFragment">
+    android:gravity="center_horizontal"
+    tools:context=".fragment.select_fragment.DateFragment">
 <androidx.recyclerview.widget.RecyclerView
-    android:id="@+id/rv_bottom_price"
+    android:id="@+id/rv_cinemaDate"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"></androidx.recyclerview.widget.RecyclerView>
-
+    android:layout_height="wrap_content">
+</androidx.recyclerview.widget.RecyclerView>
 </LinearLayout>

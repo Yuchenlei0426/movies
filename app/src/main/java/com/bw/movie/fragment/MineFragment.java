@@ -3,16 +3,11 @@ package com.bw.movie.fragment;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
-import androidx.fragment.app.Fragment;
 
 import com.bw.movie.R;
 import com.bw.movie.activity.LoginActivity;
@@ -34,13 +29,13 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
     private TextView tvNickName;
     private RelativeLayout rlDian;
     private ImageView dsz;
-    private LinearLayout myBtn1;
-    private LinearLayout myBtn2;
-    private LinearLayout myBtn3;
-    private LinearLayout myBtn4;
-    private LinearLayout myBtn5;
-    private LinearLayout myBtn6;
-    private LinearLayout myBtn7;
+    private LinearLayout myBtnInterest;
+    private LinearLayout myBtnReservation;
+    private LinearLayout myBtnBuyTicket;
+    private LinearLayout myBtnReadMovie;
+    private LinearLayout myBtnMyComment;
+    private LinearLayout myBtnfeedback;
+    private LinearLayout myBtnSetting;
 
     @Override
     protected int onLayout() {
@@ -70,13 +65,13 @@ public class MineFragment extends BaseFragment implements View.OnClickListener {
         tvNickName = (TextView) view.findViewById(R.id.tv_nickName);
         rlDian = (RelativeLayout) view.findViewById(R.id.rl_dian);
         dsz = (ImageView) view.findViewById(R.id.dsz);
-        myBtn1 = (LinearLayout) view.findViewById(R.id.my_btn1);
-        myBtn2 = (LinearLayout) view.findViewById(R.id.my_btn2);
-        myBtn3 = (LinearLayout) view.findViewById(R.id.my_btn3);
-        myBtn4 = (LinearLayout) view.findViewById(R.id.my_btn4);
-        myBtn5 = (LinearLayout) view.findViewById(R.id.my_btn5);
-        myBtn6 = (LinearLayout) view.findViewById(R.id.my_btn6);
-        myBtn7 = (LinearLayout) view.findViewById(R.id.my_btn7);
+        myBtnInterest = (LinearLayout) view.findViewById(R.id.my_btn_interest);
+        myBtnReservation = (LinearLayout) view.findViewById(R.id.my_btn_reservation);
+        myBtnBuyTicket = (LinearLayout) view.findViewById(R.id.my_btn_buy_ticket);
+        myBtnReadMovie = (LinearLayout) view.findViewById(R.id.my_btn_read_movie);
+        myBtnMyComment = (LinearLayout) view.findViewById(R.id.my_btn_my_comment);
+        myBtnfeedback = (LinearLayout) view.findViewById(R.id.my_btn_feedback);
+        myBtnSetting = (LinearLayout) view.findViewById(R.id.my_btn_setting);
     }
 
     @Override

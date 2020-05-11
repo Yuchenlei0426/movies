@@ -80,6 +80,7 @@ public class LoginActivity extends BaseNetActivity implements View.OnClickListen
         if (o instanceof WeChatShow) {
             String message = ((WeChatShow) o).getMessage();
             Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+            hideDialog();
             finish();
         }
 
@@ -110,6 +111,7 @@ public class LoginActivity extends BaseNetActivity implements View.OnClickListen
                 String encode = Base64.encode(pwd.getBytes());
                 String encrypt = EncryptUtil.encrypt(encode);
                 boolean isEmail = EmailRegular.isEmail(email);
+                showDialog();
                 if (!isEmail) {
                     mCPreantent.onLoginData(email,encrypt);
                 }else {

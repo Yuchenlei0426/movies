@@ -397,4 +397,14 @@ public class CPreantent extends BasePreantent implements IContract.IPreantent {
             }
         },args);
     }
+
+    @Override
+    public void onPayData(Object... args) {
+
+    }
+
+    @Override
+    public void onBuyMovieTicketsData(Object... args) {
+//        mCModule
+    }
 }

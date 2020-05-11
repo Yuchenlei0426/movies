@@ -148,6 +148,7 @@ public class HomeFragment extends BaseNetFragment {
             mHomeAdper = new HomeAdper();
             mHomeAdper.onAddBannerAll(result);
             rvHome.setAdapter(mHomeAdper);
+
         }
 //        正在热映
         if (o instanceof ReleaseShow) {

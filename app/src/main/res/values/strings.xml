@@ -65,6 +65,11 @@
     <string name="start_time">开始时间</string>
     <string name="division_time">-----</string>
     <string name="finish_time">结束时间</string>
+    <string name="immediately">立即下单</string>
+    <string name="please">请先选座</string>
+    <string name="weChatPay">微信支付</string>
+    <string name="Pay">支付宝支付</string>
+    <string name="please_select">请选择支付方式</string>
 
 
 </resources>

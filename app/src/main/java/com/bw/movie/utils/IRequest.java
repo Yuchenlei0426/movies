@@ -17,13 +17,12 @@ import com.bw.movie.bean.home_hotmovie.HotShow;
 import com.bw.movie.bean.home_release.ReleaseShow;
 import com.bw.movie.bean.login_bean.LoginShow;
 import com.bw.movie.bean.movie_detail.MovieDetailShow;
-import com.bw.movie.bean.movieschedule.MovieSchedule;
 import com.bw.movie.bean.movieschedule.MovieScheduleShow;
+import com.bw.movie.bean.order_show.OrderShow;
+import com.bw.movie.bean.pay.PayShow;
 import com.bw.movie.bean.register.RegisterShow;
 import com.bw.movie.bean.seatInfo.SaetInfoShow;
 import com.bw.movie.bean.wechat.WeChatShow;
-
-import java.util.List;
 
 import io.reactivex.Observable;
 import retrofit2.http.Field;
@@ -139,9 +138,26 @@ public interface IRequest {
     //    根据影厅ID 查询座位
     @GET(Api.FINDSEATINFO_URL)
     Observable<SaetInfoShow> findSeatInfo(@Query("hallId") Integer hallId);
-//    微信登录
+
+    //    微信登录
     @POST(Api.WECHATBINDINGLOGIN_URL)
     @FormUrlEncoded
-    Observable<WeChatShow> weChat(@Field("code")String code);
+    Observable<WeChatShow> weChat(@Field("code") String code);
+
+    //购票下单
+    @POST(Api.BUYMOVIETICKETS_URL)
+    @FormUrlEncoded
+    Observable<OrderShow> buyMovieTickets(@Header("userId") int userId,
+                                          @Header("sessionId") String sessionId,
+                                          @Field("scheduleId") int scheduleId,
+                                          @Field("seat") String seat,
+                                          @Field("sign") String sign);
+    //支付
+    @FormUrlEncoded
+    @POST(Api.PAY_URL)
+    Observable<PayShow> pay(@Header("userId") int userId,
+                            @Header("sessionId") String sessionId,
+                            @Field("payType") int paytype,
+                            @Field("orderId")String orderId);
 
 }

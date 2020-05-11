@@ -1,4 +1,4 @@
-package com.bw.movie.adper.nearby;
+package com.bw.movie.adper.nearby_adper;
 
 import android.content.Intent;
 import android.view.LayoutInflater;

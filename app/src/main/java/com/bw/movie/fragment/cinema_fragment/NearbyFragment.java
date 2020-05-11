@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bw.movie.R;
-import com.bw.movie.adper.nearby.NearbyCinemasAdper;
+import com.bw.movie.adper.nearby_adper.NearbyCinemasAdper;
 import com.bw.movie.base.BaseNetFragment;
 import com.bw.movie.base.BasePreantent;
 import com.bw.movie.bean.cinema_bean.nearbycinemas.NearbyCinemas;

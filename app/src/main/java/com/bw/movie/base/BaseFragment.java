@@ -22,6 +22,7 @@ public abstract class BaseFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(onLayout(), container, false);
         onView(view);
+
         onData();
         return view;
     }

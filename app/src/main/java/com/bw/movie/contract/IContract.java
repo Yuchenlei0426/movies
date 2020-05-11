@@ -50,6 +50,10 @@ public interface IContract {
         void onFindMovieScheduleData(Object...args);
         void onFindSeatInfoData(Object...args);
         void onweChatData(Object...args);
+//        支付
+        void onPayData(Object...args);
+
+        void onBuyMovieTicketsData(Object...args);
 
 
 

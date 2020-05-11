@@ -22,6 +22,8 @@ import com.bw.movie.bean.login_bean.LoginShow;
 import com.bw.movie.bean.login_bean.UserInfo;
 import com.bw.movie.bean.movie_detail.MovieDetailShow;
 import com.bw.movie.bean.movieschedule.MovieScheduleShow;
+import com.bw.movie.bean.order_show.OrderShow;
+import com.bw.movie.bean.pay.PayShow;
 import com.bw.movie.bean.register.RegisterShow;
 import com.bw.movie.bean.seatInfo.SaetInfoShow;
 import com.bw.movie.bean.wechat.WeChatResult;
@@ -761,6 +763,74 @@ public class CModule {
                         }
                     }
 
+                    @Override
+                    public void onError(Throwable e) {
+                        iModule.onFail(e.getMessage());
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+    }
+  /**
+     * 根据影厅ID  支付
+     * @param iModule
+     * @param args
+     */
+   public void onweChatPayData(IContract.IModule iModule, Object... args) {
+        IRequest iRequest = WorkUtil.getIncract().create(IRequest.class);
+        iRequest.pay((int) args[0],(String)args[1],(int)args[2],(String)args[3])
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<PayShow>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(PayShow payShow) {
+                        String status = payShow.getStatus();
+                        if (status.equals("0000")) {
+                            iModule.onSuccess(payShow);
+                        }
+                    }
+                    @Override
+                    public void onError(Throwable e) {
+                        iModule.onFail(e.getMessage());
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+    }
+  /**
+     * 根据影厅ID  购票下单
+     * @param iModule
+     * @param args
+     */
+   public void onbuyMovieTicketsData(IContract.IModule iModule, Object... args) {
+        IRequest iRequest = WorkUtil.getIncract().create(IRequest.class);
+        iRequest.buyMovieTickets((int) args[0],(String)args[1],(int)args[2],(String)args[3],(String)args[4])
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<OrderShow>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(OrderShow orderShow) {
+                        String status = orderShow.getStatus();
+                        if (status.equals("0000")) {
+                            iModule.onSuccess(orderShow);
+                        }
+                    }
                     @Override
                     public void onError(Throwable e) {
                         iModule.onFail(e.getMessage());

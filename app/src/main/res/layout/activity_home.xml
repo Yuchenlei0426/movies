@@ -20,7 +20,7 @@
         android:orientation="horizontal"
         >
         <RelativeLayout
-            android:id="@+id/relay_view1"
+            android:id="@+id/relay_view_home"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -63,7 +63,7 @@
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/relay_view2"
+            android:id="@+id/relay_view_cinema"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -108,7 +108,7 @@
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/relay_view3"
+            android:id="@+id/relay_view_mine"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"

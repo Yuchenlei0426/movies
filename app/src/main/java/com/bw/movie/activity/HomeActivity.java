@@ -1,14 +1,11 @@
 package com.bw.movie.activity;
 
-import android.os.Bundle;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.bw.movie.R;
 import com.bw.movie.base.BaseActivity;
@@ -24,15 +21,15 @@ import com.bw.movie.fragment.MineFragment;
 public class HomeActivity extends BaseActivity {
 
     private FrameLayout frame;
-    private RelativeLayout relayView1;
+    private RelativeLayout relayViewHome;
     private LinearLayout linMovie;
     private TextView tvMoview;
     private ImageView movieIma;
-    private RelativeLayout relayView2;
+    private RelativeLayout relayViewCinema;
     private LinearLayout linCinema;
     private TextView tvCinema;
     private ImageView cinemaIma;
-    private RelativeLayout relayView3;
+    private RelativeLayout relayView_Mine;
     private LinearLayout linMine;
     private TextView tvMine;
     private ImageView mineIma;
@@ -71,15 +68,15 @@ public class HomeActivity extends BaseActivity {
 
     private void initView() {
         frame = (FrameLayout) findViewById(R.id.frame);
-        relayView1 = (RelativeLayout) findViewById(R.id.relay_view1);
+        relayViewHome = (RelativeLayout) findViewById(R.id.relay_view_home);
         linMovie = (LinearLayout) findViewById(R.id.lin_movie);
         tvMoview = (TextView) findViewById(R.id.tv_moview);
         movieIma = (ImageView) findViewById(R.id.movie_ima);
-        relayView2 = (RelativeLayout) findViewById(R.id.relay_view2);
+        relayViewCinema = (RelativeLayout) findViewById(R.id.relay_view_cinema);
         linCinema = (LinearLayout) findViewById(R.id.lin_cinema);
         tvCinema = (TextView) findViewById(R.id.tv_cinema);
         cinemaIma = (ImageView) findViewById(R.id.cinema_ima);
-        relayView3 = (RelativeLayout) findViewById(R.id.relay_view3);
+        relayView_Mine = (RelativeLayout) findViewById(R.id.relay_view_mine);
         linMine = (LinearLayout) findViewById(R.id.lin_mine);
         tvMine = (TextView) findViewById(R.id.tv_mine);
         mineIma = (ImageView) findViewById(R.id.mine_ima);

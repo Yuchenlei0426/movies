@@ -1,5 +1,6 @@
 package com.bw.movie.adper;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,10 +13,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bw.movie.R;
+import com.bw.movie.activity.MoreActivity;
 import com.bw.movie.bean.banner.BannerResult;
 import com.bw.movie.bean.home_comingsoonmovie.ComingSoonResult;
 import com.bw.movie.bean.home_hotmovie.HotResult;
 import com.bw.movie.bean.home_release.ReleaseResult;
+import com.bw.movie.utils.App;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.stx.xhb.xbanner.XBanner;
 
@@ -121,6 +124,14 @@ public class HomeAdper extends RecyclerView.Adapter {
             LinearLayoutManager linearLayoutManager = new LinearLayoutManager(releaseViewHodule.itemView.getContext(), RecyclerView.HORIZONTAL, false);
             ((ReleaseViewHodule) holder).rvHot.setLayoutManager(linearLayoutManager);
             ((ReleaseViewHodule) holder).rvHot.setAdapter(releaseAdper);
+//            更多
+            ((ReleaseViewHodule) holder).reMoveRelease.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(holder.itemView.getContext(), MoreActivity.class);
+                    holder.itemView.getContext().startActivity(intent);
+                }
+            });
         }
         //        即将上映
         if (itemViewType == COMINGSOON_TYPE) {
@@ -130,6 +141,13 @@ public class HomeAdper extends RecyclerView.Adapter {
                 comingSoonAdper.addAll(mComingSoonResults);
                 ((ComingSoonViewHodule) holder).rvComingSoon.setLayoutManager(linearLayoutManager);
                 ((ComingSoonViewHodule) holder).rvComingSoon.setAdapter(comingSoonAdper);
+                ((ComingSoonViewHodule) holder).reMoveComing.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(holder.itemView.getContext(), MoreActivity.class);
+                        holder.itemView.getContext().startActivity(intent);
+                    }
+                });
             }
         }
         //        热门电影
@@ -142,6 +160,13 @@ public class HomeAdper extends RecyclerView.Adapter {
                 LinearLayoutManager linearLayoutManager = new LinearLayoutManager(holder.itemView.getContext(), RecyclerView.HORIZONTAL, false);
                 ((HotViewHodule) holder).rvRelease.setLayoutManager(linearLayoutManager);
                 ((HotViewHodule) holder).rvRelease.setAdapter(hotAdper);
+                ((HotViewHodule) holder).reMoveHot.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(holder.itemView.getContext(), MoreActivity.class);
+                        holder.itemView.getContext().startActivity(intent);
+                    }
+                });
             }
         }
     }
@@ -197,13 +222,13 @@ public class HomeAdper extends RecyclerView.Adapter {
     //正在热映
     public class ReleaseViewHodule extends RecyclerView.ViewHolder {
         ImageView ivXin;
-        TextView reMove1;
+        TextView reMoveRelease;
         RecyclerView rvHot;
 
         public ReleaseViewHodule(@NonNull View itemView) {
             super(itemView);
             ivXin = (ImageView) itemView.findViewById(R.id.iv_xin);
-            reMove1 = (TextView) itemView.findViewById(R.id.re_move_release);
+            reMoveRelease = (TextView) itemView.findViewById(R.id.re_move_release);
             rvHot = (RecyclerView) itemView.findViewById(R.id.rv_hot);
 
         }
@@ -212,13 +237,13 @@ public class HomeAdper extends RecyclerView.Adapter {
     //    即将上映
     public class ComingSoonViewHodule extends RecyclerView.ViewHolder {
         private ImageView ivHot;
-        private TextView reMove2;
+        private TextView reMoveComing;
         private RecyclerView rvComingSoon;
 
         public ComingSoonViewHodule(View itemView) {
             super(itemView);
             ivHot = (ImageView) itemView.findViewById(R.id.iv_hot);
-            reMove2 = (TextView) itemView.findViewById(R.id.re_move_coming);
+            reMoveComing = (TextView) itemView.findViewById(R.id.re_move_coming);
             rvComingSoon = (RecyclerView) itemView.findViewById(R.id.rv_coming_soon);
 
         }
@@ -227,13 +252,13 @@ public class HomeAdper extends RecyclerView.Adapter {
     //    热门电影
     public class HotViewHodule extends RecyclerView.ViewHolder {
         private ImageView ivHotre;
-        private TextView reMove3;
+        private TextView reMoveHot;
         private SimpleDraweeView ivPic;
         private RecyclerView rvRelease;
         public HotViewHodule(View itemView) {
             super(itemView);
             ivHotre = (ImageView) itemView.findViewById(R.id.iv_hotre);
-            reMove3 = (TextView) itemView.findViewById(R.id.re_move_hot);
+            reMoveHot = (TextView) itemView.findViewById(R.id.re_move_hot);
             ivPic = (SimpleDraweeView) itemView.findViewById(R.id.iv_pic);
             rvRelease = (RecyclerView) itemView.findViewById(R.id.rv_hot);
 

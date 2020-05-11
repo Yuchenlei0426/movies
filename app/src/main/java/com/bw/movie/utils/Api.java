@@ -41,12 +41,16 @@ public interface Api {
 
     //    根据价格查询影院
     String FINDCINEMASINFOBYPRICE_URL = "movie/v2/findCinemasInfoByPrice";
-//    根据电影ID 和影院ID 查询影厅
+    //    根据电影ID 和影院ID 查询影厅
     String FINDMOVIESCHEDULE_URL = "movie/v2/findMovieSchedule";
-//    根据影厅ID 查询座位
+    //    根据影厅ID 查询座位
     String FINDSEATINFO_URL = "movie/v2/findSeatInfo";
-//    微信登录
+    //    微信登录
     String WECHATBINDINGLOGIN_URL = "user/v1/weChatBindingLogin";
+    //    购票下单
+    String BUYMOVIETICKETS_URL = "movie/v2/verify/buyMovieTickets";
+    //支付
+    String PAY_URL = "movieApi/movie/v2/verify/pay";
 
 
 }

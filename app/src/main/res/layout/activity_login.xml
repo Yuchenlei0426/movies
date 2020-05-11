@@ -102,6 +102,6 @@
             android:layout_margin="@dimen/dp_20"
             android:background="@drawable/shapesweixinlogin"
             android:padding="@dimen/dp_10"
-            android:src="@drawable/weixin_copy_3" />
+            android:src="@drawable/weixin_copy" />
     </LinearLayout>
 </LinearLayout>

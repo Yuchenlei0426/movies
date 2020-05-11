@@ -19,7 +19,8 @@
         android:roundIcon="@drawable/movie_app"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.SeatselectionActivity"></activity>
+        <activity android:name=".activity.MoreActivity"></activity>
+        <activity android:name=".activity.SeatselectionActivity" />
         <activity android:name=".activity.ScheduleActivity" />
         <activity android:name=".activity.CinemaDetailsActivity" />
         <activity android:name=".activity.SelectTheatersActivity" />
@@ -28,17 +29,20 @@
         <activity android:name=".activity.LoginActivity" />
         <activity android:name=".activity.MovieDetailsActivity" />
         <activity android:name=".activity.HomeActivity" />
-
         <activity
-            android:name="com.bw.movie.wxapi.WXEntryActivity"
+            android:name=".wxapi.WXEntryActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:exported="true"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-        </activity>
-
-
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"></activity>
+        <activity
+            android:name=".wxapi.WXPayEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"></activity>
         <activity android:name=".activity.CountdownActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
